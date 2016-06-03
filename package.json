@@ -1,0 +1,24 @@
+{
+  "name": "frank-gairal-bo",
+  "version": "0.0.1",
+  "description": "Backoffice for frank.gairal.com",
+  "main": "index.js",
+  "scripts": {
+    "start": "./node_modules/.bin/nodemon"
+  },
+  "author": "frank.gairal",
+  "readmeFilename": "README.md",
+  "keywords": [
+    "nodejs",
+    "koa",
+    "koa2",
+    "restful",
+    "api"
+  ],
+  "dependencies": {
+    "koa": "2.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.8.1"
+  }
+}
