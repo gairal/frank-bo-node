@@ -1,17 +1,26 @@
-var Koa = require("koa");
-const app = new Koa();
+import config from './config'
+import Koa from 'koa'
+import views from 'koa-views'
+import serve from 'koa-static'
+import rootRoutes from './routes/index'
+import skillRoutes from './routes/skills'
+import db from './services/database'
+import utils from './services/utils'
 
-// uses async arrow functions
-app.use(async (ctx, next) => {
-    try {
-        await next(); // next is now a function
-    } catch (err) {
-        ctx.body = { message: err.message };
-        ctx.status = err.status || 500;
-    }
-});
+const app = new Koa()
 
-app.use(async ctx => {
-    const user = await User.getById(ctx.session.userid); // await instead of yield
-    ctx.body = user; // ctx instead of this
-});
+//request time
+app.use(utils.requestTime)
+// Create a RethinkDB connection
+app.use(db.init);
+
+app.use(views(`${__dirname}/views`, { extension: 'jade' }))
+app.use(serve(`${__dirname}/public`))
+app.use(rootRoutes.routes())
+app.use(skillRoutes.routes())
+
+app.listen(config.koa.port, () => {
+    console.log('Server running at http://localhost:3000')
+})
+
+export default app
