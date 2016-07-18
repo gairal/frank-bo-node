@@ -25,8 +25,6 @@ router.get('/:id', async ctx => {
 router.get('/categories/:id', async ctx => {
     const category = ctx.params.id
 
-    console.log('byCat');
-
     try {
         let result = await ctx.db.getByCategory('interest', category);
         ctx.body = result;
