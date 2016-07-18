@@ -19,6 +19,19 @@ var Db = class {
         return result;
     }
 
+    async getByCategory(table, category) {
+        try {
+            let cursor = await r.table(table).filter({'category_id': category}).run(this._rdbConn);
+            let result = await cursor.toArray();
+
+            return result;
+        } catch(err) {
+            if (err) throw err;
+        }
+
+        return result;
+    }
+
     async getById(table, id) {
         try {
             let result = await r.table(table).get(id).run(this._rdbConn);

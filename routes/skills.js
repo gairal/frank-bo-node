@@ -15,7 +15,20 @@ router.get('/:id', async ctx => {
     const skill = ctx.params.id
 
     try {
-        let result = await ctx.db.getById('skill',skill);
+        let result = await ctx.db.getById('skill', skill);
+        ctx.body = result;
+    } catch(err) {
+        utils.log (ctx, err);
+    }
+})
+
+router.get('/categories/:id', async ctx => {
+    const category = ctx.params.id
+
+    console.log('byCat');
+
+    try {
+        let result = await ctx.db.getByCategory('skill', category);
         ctx.body = result;
     } catch(err) {
         utils.log (ctx, err);
