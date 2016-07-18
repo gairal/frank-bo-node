@@ -1,1 +1,29 @@
-(\d+)\t([^\t]+)\t([^\t]*)\t([^\t]*)\t(\d*)
+[{
+    "name": "Saint-Pierre Fourier",
+    "short_descritpion": "High school",
+    "year_in": "2000-09-01",
+    "year_out": "2001-06-30",
+    "place": "Paris 12th",
+    "diploma": "Baccalauréat S (High-school degree specialized in Science) with distinction",
+    "website": "http://www.spfparis12.fr",
+    "image_id": "39a86918-79e1-41da-8079-6cbfa496c69a"
+}, {
+    "name": "ENC",
+    "short_descritpion": "National School of Business",
+    "year_in": "2003-09-01",
+    "year_out": "2005-06-30",
+    "place": "Paris 17th",
+    "diploma": "BTS (Two-year university degree in Information Technology and Management) - Option application developer",
+    "website": "http://www.enc-bessieres.org",
+    "image_id": "24475c8e-bf8d-4f00-a5a8-3c9c891e2daa"
+}, {
+    "name": "Efrei",
+    "short_descritpion": "Engineering school of IT and management",
+    "year_in": "2005-09-01",
+    "year_out": "2008-06-30",
+    "place": "Villejuif",
+    "diploma": "Master in engineering specialized in Information Technology - Option software engineering",
+    "website": "http://www.efrei.fr",
+    "extra": "Tutored mathematics to middle school students (14 yrs) with the association EAH (EFREI's humanitarian association).",
+    "image_id": "0082d6f9-6c99-4010-a57a-10d877c61f9c"
+}]
