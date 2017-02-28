@@ -3,3 +3,5 @@ node_modules
 rethinkdb_data
 
 npm-debug.log
+
+database.json
