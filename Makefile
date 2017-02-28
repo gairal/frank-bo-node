@@ -1,5 +1,5 @@
-run: 
-	npm start
+run:
+	yarn run start
 
 watch:
-	npm watch
+	yarn run watch

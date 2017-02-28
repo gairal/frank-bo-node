@@ -13,10 +13,10 @@ import utils from './services/utils'
 
 const app = new Koa()
 
-//request time
+// request time
 app.use(utils.requestTime)
 // Create a RethinkDB connection
-app.use(db.init);
+app.use(db.init)
 
 app.use(views(`${__dirname}/views`, { extension: 'jade' }))
 app.use(serve(`${__dirname}/public`))
@@ -29,7 +29,7 @@ app.use(educationRoutes.routes())
 app.use(interestRoutes.routes())
 
 app.listen(config.koa.port, () => {
-    console.log('Server running at http://localhost:3000')
+  console.log('Server running at http://localhost:3000')
 })
 
 export default app
