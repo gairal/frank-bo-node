@@ -21,7 +21,7 @@ const router = new Router({ prefix: '/educations' })
  */
 router.get('/', async ctx => {
   try {
-    let result = await ctx.db.getAll('education')
+    let result = await ctx.db.getAll('education', true)
     ctx.body = result
   } catch (err) {
     utils.log(ctx, err)
@@ -53,7 +53,7 @@ router.get('/:id', async ctx => {
   const education = ctx.params.id
 
   try {
-    let result = await ctx.db.getById('education', education)
+    let result = await ctx.db.getById('education', education, true)
     ctx.body = result
   } catch (err) {
     utils.log(ctx, err)

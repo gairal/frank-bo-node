@@ -7,10 +7,35 @@ var Db = class {
     this._rdbConn = rdbConn
   }
 
-  async getAll (table) {
+  async getAll (table, withImage = false) {
     let result
     try {
-      let cursor = await r.table(table).run(this._rdbConn)
+      let cursor
+      if (!withImage) {
+        cursor = await r.table(table).run(this._rdbConn)
+      } else {
+        cursor = await r.table(table).eqJoin('image_id', r.table('image'))
+        .map((doc) => {
+          return doc.merge(() => {
+            return {
+              'right': {
+                'image': doc('right')('name')
+              }
+            }
+          })
+        })
+        .without({
+          'left': {
+            'image_id': true
+          },
+          'right': {
+            'id': true,
+            'name': true
+          }
+        })
+        .zip()
+        .run(this._rdbConn)
+      }
       result = await cursor.toArray()
 
       return result
@@ -54,9 +79,35 @@ var Db = class {
     return result
   }
 
-  async getById (table, id) {
+  async getById (table, id, withImage = false) {
     try {
-      let result = await r.table(table).get(id).run(this._rdbConn)
+      let result
+      if (!withImage) {
+        result = await r.table(table).get(id).run(this._rdbConn)
+      } else {
+        let cursor = await r.table(table).filter({id: id}).eqJoin('image_id', r.table('image'))
+        .map((doc) => {
+          return doc.merge(() => {
+            return {
+              'right': {
+                'image': doc('right')('name')
+              }
+            }
+          })
+        })
+        .without({
+          'left': {
+            'image_id': true
+          },
+          'right': {
+            'id': true,
+            'name': true
+          }
+        })
+        .zip()
+        .run(this._rdbConn)
+        result = await cursor.next()
+      }
 
       return result
     } catch (err) {

@@ -21,7 +21,7 @@ const router = new Router({ prefix: '/experiences' })
  */
 router.get('/', async ctx => {
   try {
-    let result = await ctx.db.getAll('experience')
+    let result = await ctx.db.getAll('experience', true)
     ctx.body = result
   } catch (err) {
     utils.log(ctx, err)
