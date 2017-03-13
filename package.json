@@ -14,7 +14,8 @@
     "koa-docs": "2.1.0",
     "jade": "^1.11.0",
     "rethinkdb": "^2.3.3",
-    "swagger-koa": "^1.0.10"
+    "swagger-jsdoc ": "^1.9.2",
+    "swagger-injector": "^3.0.0"
   },
   "devDependencies": {
     "babel-plugin-add-module-exports": "^0.2.1",
