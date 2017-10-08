@@ -26,7 +26,7 @@
     "koa-docs": "2.1.0",
     "pug": "^2.0.0-rc.4",
     "rethinkdb": "^2.3.3",
-    "swagger-jsdoc ": "^1.9.7",
+    "swagger-jsdoc": "^1.9.7",
     "swagger-injector": "^3.0.0"
   }
 }
