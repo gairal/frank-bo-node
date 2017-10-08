@@ -1,13 +1,13 @@
-import dbConfig from '../database.json'
+import dbConfig from '../database.json';
 
 export default {
   rethinkdb: {
     host: dbConfig.host,
     port: dbConfig.port,
     authKey: dbConfig.authKey,
-    db: dbConfig.db
+    db: dbConfig.db,
   },
   koa: {
-    port: 3000
-  }
-}
+    port: 3000,
+  },
+};

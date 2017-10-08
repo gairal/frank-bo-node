@@ -1,6 +1,7 @@
-import Router from 'koa-router'
-import utils from '../services/utils'
-const router = new Router({ prefix: '/interests' })
+import Router from 'koa-router';
+import utils from '../services/utils';
+
+const router = new Router({ prefix: '/interests' });
 
 /**
  * @swagger
@@ -19,14 +20,14 @@ const router = new Router({ prefix: '/interests' })
  *     tags:
  *       - interest
  */
-router.get('/', async ctx => {
+router.get('/', async (ctx) => {
   try {
-    let result = await ctx.db.getAll('interest')
-    ctx.body = result
+    const result = await ctx.db.getAll('interest');
+    ctx.body = result;
   } catch (err) {
-    utils.log(ctx, err)
+    utils.log(ctx, err);
   }
-})
+});
 
 /**
  * @swagger
@@ -49,16 +50,16 @@ router.get('/', async ctx => {
  *     tags:
  *       - interest
  */
-router.get('/:id', async ctx => {
-  const interest = ctx.params.id
+router.get('/:id', async (ctx) => {
+  const interest = ctx.params.id;
 
   try {
-    let result = await ctx.db.getById('interest', interest)
-    ctx.body = result
+    const result = await ctx.db.getById('interest', interest);
+    ctx.body = result;
   } catch (err) {
-    utils.log(ctx, err)
+    utils.log(ctx, err);
   }
-})
+});
 
 /**
  * @swagger
@@ -75,15 +76,15 @@ router.get('/:id', async ctx => {
  *     tags:
  *       - interest
  */
-router.get('/categories/:id', async ctx => {
-  const category = ctx.params.id
+router.get('/categories/:id', async (ctx) => {
+  const category = ctx.params.id;
 
   try {
-    let result = await ctx.db.getByCategory('interest', category)
-    ctx.body = result
+    const result = await ctx.db.getByCategory('interest', category);
+    ctx.body = result;
   } catch (err) {
-    utils.log(ctx, err)
+    utils.log(ctx, err);
   }
-})
+});
 
-export default router
+export default router;

@@ -1,6 +1,7 @@
-import Router from 'koa-router'
-import utils from '../services/utils'
-const router = new Router({ prefix: '/travels' })
+import Router from 'koa-router';
+import utils from '../services/utils';
+
+const router = new Router({ prefix: '/travels' });
 
 /**
  * @swagger
@@ -19,14 +20,14 @@ const router = new Router({ prefix: '/travels' })
  *     tags:
  *       - travel
  */
-router.get('/', async ctx => {
+router.get('/', async (ctx) => {
   try {
-    let result = await ctx.db.getAll('travel')
-    ctx.body = result
+    const result = await ctx.db.getAll('travel');
+    ctx.body = result;
   } catch (err) {
-    utils.log(ctx, err)
+    utils.log(ctx, err);
   }
-})
+});
 
 /**
  * @swagger
@@ -49,15 +50,15 @@ router.get('/', async ctx => {
  *     tags:
  *       - travel
  */
-router.get('/:id', async ctx => {
-  const travel = ctx.params.id
+router.get('/:id', async (ctx) => {
+  const travel = ctx.params.id;
 
   try {
-    let result = await ctx.db.getById('travel', travel)
-    ctx.body = result
+    const result = await ctx.db.getById('travel', travel);
+    ctx.body = result;
   } catch (err) {
-    utils.log(ctx, err)
+    utils.log(ctx, err);
   }
-})
+});
 
-export default router
+export default router;

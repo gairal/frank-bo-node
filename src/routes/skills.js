@@ -1,6 +1,7 @@
-import Router from 'koa-router'
-import utils from '../services/utils'
-const router = new Router({ prefix: '/skills' })
+import Router from 'koa-router';
+import utils from '../services/utils';
+
+const router = new Router({ prefix: '/skills' });
 
 /**
  * @swagger
@@ -19,14 +20,14 @@ const router = new Router({ prefix: '/skills' })
  *     tags:
  *       - skill
  */
-router.get('/', async ctx => {
+router.get('/', async (ctx) => {
   try {
-    let result = await ctx.db.getAll('skill')
-    ctx.body = result
+    const result = await ctx.db.getAll('skill');
+    ctx.body = result;
   } catch (err) {
-    utils.log(ctx, err)
+    utils.log(ctx, err);
   }
-})
+});
 
 /**
  * @swagger
@@ -45,14 +46,14 @@ router.get('/', async ctx => {
  *     tags:
  *       - skill
  */
-router.get('/categories', async ctx => {
+router.get('/categories', async (ctx) => {
   try {
-    let result = await ctx.db.getAllByCategory('skill')
-    ctx.body = result
+    const result = await ctx.db.getAllByCategory('skill');
+    ctx.body = result;
   } catch (err) {
-    utils.log(ctx, err)
+    utils.log(ctx, err);
   }
-})
+});
 
 /**
  * @swagger
@@ -75,16 +76,16 @@ router.get('/categories', async ctx => {
  *     tags:
  *       - skill
  */
-router.get('/:id', async ctx => {
-  const skill = ctx.params.id
+router.get('/:id', async (ctx) => {
+  const skill = ctx.params.id;
 
   try {
-    let result = await ctx.db.getById('skill', skill)
-    ctx.body = result
+    const result = await ctx.db.getById('skill', skill);
+    ctx.body = result;
   } catch (err) {
-    utils.log(ctx, err)
+    utils.log(ctx, err);
   }
-})
+});
 
 /**
  * @swagger
@@ -101,15 +102,15 @@ router.get('/:id', async ctx => {
  *     tags:
  *       - skill
  */
-router.get('/categories/:id', async ctx => {
-  const category = ctx.params.id
+router.get('/categories/:id', async (ctx) => {
+  const category = ctx.params.id;
 
   try {
-    let result = await ctx.db.getByCategory('skill', category)
-    ctx.body = result
+    const result = await ctx.db.getByCategory('skill', category);
+    ctx.body = result;
   } catch (err) {
-    utils.log(ctx, err)
+    utils.log(ctx, err);
   }
-})
+});
 
-export default router
+export default router;

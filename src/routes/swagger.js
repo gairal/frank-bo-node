@@ -1,13 +1,14 @@
-import Router from 'koa-router'
-import swaggerJSDoc from 'swagger-jsdoc'
-const router = new Router()
+import swaggerJSDoc from 'swagger-jsdoc';
+import Router from 'koa-router';
 
-let options = {
+const router = new Router();
+
+const options = {
   swaggerDefinition: {
     info: {
       title: 'frank.gairal.com API',
-      version: '1.0.0'
-    }
+      version: '1.0.0',
+    },
   },
   apis: [
     './src/routes/swagger.js',
@@ -15,14 +16,13 @@ let options = {
     './src/routes/experiences.js',
     './src/routes/interests.js',
     './src/routes/skills.js',
-    './src/routes/travels.js'
-  ]
-}
+    './src/routes/travels.js',
+  ],
+};
 
-router.get('/swagger.json', async ctx => {
-  let swaggerSpec = await swaggerJSDoc(options)
-  ctx.body = swaggerSpec
-})
+router.get('/swagger.json', async (ctx) => {
+  ctx.body = await swaggerJSDoc(options);
+});
 
 /**
  * @swagger
@@ -188,4 +188,4 @@ router.get('/swagger.json', async ctx => {
  *               - $ref: Skill
  */
 
-export default router
+export default router;

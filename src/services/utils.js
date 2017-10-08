@@ -1,24 +1,23 @@
-import http from 'http'
+import http from 'http';
 
-var Utils = class {
-
+class Utils {
   // request time
-  static async requestTime (ctx, next) {
-    const start = new Date()
-    await next()
-    const ms = new Date() - start
-    console.log(`${ctx.method} ${ctx.url} - ${ms}`)
+  static async requestTime(ctx, next) {
+    const start = new Date();
+    await next();
+    const ms = new Date() - start;
+    console.log(`${ctx.method} ${ctx.url} - ${ms}`); // eslint-disable-line no-console
   }
 
-  static log (ctx, err) {
-    console.log(err.message)
-    ctx.status = 500
-    ctx.body = err.message || http.STATUS_CODES[ctx.status]
+  static log(ctx, err) {
+    console.log(err.message); // eslint-disable-line no-console
+    ctx.status = 500;
+    ctx.body = err.message || http.STATUS_CODES[ctx.status];
   }
 
-  static json (ctx) {
-    ctx.body = ''
+  static json(ctx) {
+    ctx.body = '';
   }
 }
 
-export default Utils
+export default Utils;
