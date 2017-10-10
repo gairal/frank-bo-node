@@ -2,7 +2,10 @@ import Koa from 'koa';
 import swagger from 'swagger-injector';
 import views from 'koa-views';
 import serve from 'koa-static';
-import config from './config';
+import config from 'config';
+import morgan from 'koa-morgan';
+import { create, logger } from './globals';
+
 import rootRoutes from './routes/index';
 import swaggerRoutes from './routes/swagger';
 import skillRoutes from './routes/skills';
@@ -13,7 +16,14 @@ import interestRoutes from './routes/interests';
 import db from './services/database';
 import utils from './services/utils';
 
+// Create global objects
+create();
+
 const app = new Koa();
+
+if (config.LOG_LEVEL === 'debug') {
+  app.use(morgan('dev'));
+}
 
 // request time
 app.use(utils.requestTime);
@@ -37,8 +47,8 @@ app.use(swagger.koa({
   css: '.info_title {font-size: 50px !important; }',
 }));
 
-app.listen(config.koa.port, () => {
-  console.log('Server running at http://localhost:3000'); // eslint-disable-line no-console
+app.listen(config.KOA.port, () => {
+  logger().info('Server running at http://localhost:3000');
 });
 
 export default app;

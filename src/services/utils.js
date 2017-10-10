@@ -1,4 +1,5 @@
 import http from 'http';
+import { logger } from '../globals';
 
 class Utils {
   // request time
@@ -6,11 +7,11 @@ class Utils {
     const start = new Date();
     await next();
     const ms = new Date() - start;
-    console.log(`${ctx.method} ${ctx.url} - ${ms}`); // eslint-disable-line no-console
+    logger().info(`${ctx.method} ${ctx.url} - ${ms}`);
   }
 
   static log(ctx, err) {
-    console.log(err.message); // eslint-disable-line no-console
+    logger().error(err.message);
     ctx.status = 500;
     ctx.body = err.message || http.STATUS_CODES[ctx.status];
   }

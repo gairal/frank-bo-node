@@ -1,8 +1,0 @@
-{
-  "host": "localhost",
-  "port": 28015,
-  "db": "gairal_frank",
-  "authKey": "",
-  "discovery": true,
-  "timeout": 60
-}

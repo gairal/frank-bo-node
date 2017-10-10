@@ -1,6 +1,7 @@
 import http from 'http';
 import r from 'rethinkdb';
-import config from '../config';
+import config from 'config';
+import { logger } from '../globals';
 
 class Db {
   constructor(rdbConn) {
@@ -113,11 +114,11 @@ class Db {
   */
   static async init(ctx, next) {
     try {
-      const conn = await r.connect(config.rethinkdb);
+      const conn = await r.connect(config.RETHINKDB);
       ctx.db = new Db(conn);
       await next();
     } catch (err) {
-      console.log(err.message);
+      logger().error(err.message);
       ctx.status = 500;
       ctx.body = err.message || http.STATUS_CODES[ctx.status];
     }

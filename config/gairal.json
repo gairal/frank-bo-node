@@ -1,0 +1,14 @@
+{
+  "RETHINKDB": {
+    "host": "localhost",
+    "port": 28015,
+    "db": "gairal_frank",
+    "authKey": "",
+    "discover": true,
+    "timeout": 60
+  },
+  "KOA": {
+    "port": 3000
+  },
+  "LOG_LEVEL": "debug"
+}

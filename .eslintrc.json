@@ -16,7 +16,6 @@
         "new-cap": 2,
         "camelcase": 2,
         "quotes": [2, "single"],
-        "no-trailing-spaces": 2,
-        "no-console": 0
+        "no-trailing-spaces": 2
     }
 }
