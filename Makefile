@@ -1,5 +1,5 @@
 install:
-	yarn install
+	npm install
 
 migrate:
 	rethink-migrate down --all
