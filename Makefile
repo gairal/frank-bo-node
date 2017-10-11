@@ -6,10 +6,10 @@ migrate:
 	rethink-migrate up --all
 
 run:
-	yarn run start
+	npm run start
 
 watch:
-	yarn run watch
+	npm run watch
 
 start-prod:
 	pm2 start ecosystem.config.js
