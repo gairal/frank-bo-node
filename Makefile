@@ -12,8 +12,8 @@ watch:
 	npm run watch
 
 start-prod:
-	pm2 start ecosystem.config.js
+	pm2 start ecosystem.config.js --env production
 stop-prod:
-	pm2 stop ecosystem.config.js
+	pm2 stop ecosystem.config.js --env production
 restart-prod:
-	pm2 restart ecosystem.config.js
+	pm2 restart ecosystem.config.js --env production
