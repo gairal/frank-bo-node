@@ -7,7 +7,7 @@ class Utils {
     const start = new Date();
     await next();
     const ms = new Date() - start;
-    logger().info(`${ctx.method} ${ctx.url} - ${ms}`);
+    logger().warn(`${ctx.method} ${ctx.url} - ${ms}`);
   }
 
   static log(ctx, err) {
