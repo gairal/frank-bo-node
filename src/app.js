@@ -47,8 +47,9 @@ app.use(swagger.koa({
   css: '.info_title {font-size: 50px !important; }',
 }));
 
-app.listen(config.KOA.port, () => {
-  logger().info('Server running at http://localhost:3000');
+const PORT = process.env.PORT || config.KOA.port;
+app.listen(PORT, () => {
+  logger().info(`Server running at http://localhost:${PORT}`);
 });
 
 export default app;

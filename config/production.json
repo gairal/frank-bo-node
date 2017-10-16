@@ -1,6 +1,6 @@
 {
   "KOA": {
-    "port": 3000
+    "port": 8080
   },
-  "LOG_LEVEL": "info"
+  "LOG_LEVEL": "debug"
 }
