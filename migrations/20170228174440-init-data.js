@@ -74,42 +74,43 @@ exports.up = function (r, connection) {
       }]).run(connection),
 
     // images
-    r.table('image').insert([{
-      "id": "0d7cd075-45ce-4605-a11e-2d09e855b5a3",
-      "name": "orange.png"
-    },
-    {
-      "id": "459c8391-3520-4df9-9833-268800e4b1f7",
-      "name": "phonereader.png"
-    },
-    {
-      "id": "4a9fdf42-b1e2-4049-9078-a2f8ea9c5c1f",
-      "name": "ekino.png"
-    },
-    {
-      "id": "2af167c8-f25f-4e67-b32c-3dfd330fbf5a",
-      "name": "ratp.png"
-    },
-    {
-      "id": "10e8cd39-7109-4765-b759-f482e39e3fc7",
-      "name": "spf.png"
-    },
-    {
-      "id": "f430e99b-9990-4d73-b953-40592f456609",
-      "name": "enc.jpg"
-    },
-    {
-      "id": "3fa2f0af-436c-49c4-a92b-490b6b947212",
-      "name": "alyzair.png"
-    },
-    {
-      "id": "3fcfb57a-701f-443d-baf3-1e6a9a0fea59",
-      "name": "efrei.png"
-    },
-    {
-      "id": "45755471-81c6-4f56-ad9b-584ed196c051",
-      "name": "bk.png"
-    }]).run(connection),
+    r.table('image').insert([
+      {
+        "id": "0d7cd075-45ce-4605-a11e-2d09e855b5a3",
+        "name": "orange.png"
+      },
+      {
+        "id": "459c8391-3520-4df9-9833-268800e4b1f7",
+        "name": "phonereader.png"
+      },
+      {
+        "id": "4a9fdf42-b1e2-4049-9078-a2f8ea9c5c1f",
+        "name": "ekino.png"
+      },
+      {
+        "id": "2af167c8-f25f-4e67-b32c-3dfd330fbf5a",
+        "name": "ratp.png"
+      },
+      {
+        "id": "10e8cd39-7109-4765-b759-f482e39e3fc7",
+        "name": "spf.png"
+      },
+      {
+        "id": "f430e99b-9990-4d73-b953-40592f456609",
+        "name": "enc.jpg"
+      },
+      {
+        "id": "3fa2f0af-436c-49c4-a92b-490b6b947212",
+        "name": "alyzair.png"
+      },
+      {
+        "id": "3fcfb57a-701f-443d-baf3-1e6a9a0fea59",
+        "name": "efrei.png"
+      },
+      {
+        "id": "45755471-81c6-4f56-ad9b-584ed196c051",
+        "name": "bk.png"
+      }]).run(connection),
 
     // educations
     r.table('education').insert([

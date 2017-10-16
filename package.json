@@ -28,7 +28,7 @@
     "koa-docs": "2.1.0",
     "koa-morgan": "^1.0.1",
     "pug": "^2.0.0-rc.4",
-    "rethinkdb": "^2.3.3",
+    "@google-cloud/datastore": "^1.1.0",
     "swagger-jsdoc": "^1.9.7",
     "swagger-injector": "^3.0.0"
   }

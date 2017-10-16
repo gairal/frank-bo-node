@@ -1,120 +1,117 @@
 import http from 'http';
-import r from 'rethinkdb';
-import config from 'config';
+import Datastore from '@google-cloud/datastore';
 import { logger } from '../globals';
 
 class Db {
-  constructor(rdbConn) {
-    this.rdbConn = rdbConn;
+  constructor(dConn) {
+    this.dConn = dConn;
   }
 
   async getAll(table, withImage = false) {
-    let result;
+    let result = [];
     try {
-      let cursor;
+      let q;
       if (!withImage) {
-        cursor = await r.table(table).run(this.rdbConn);
+        q = this.dConn.createQuery([table]);
       } else {
-        cursor = await r.table(table).eqJoin('image_id', r.table('image'))
-          .map(doc => doc.merge(() => ({ right: { image: doc('right')('name') } })))
-          .without({
-            left: {
-              image_id: true,
-            },
-            right: {
-              id: true,
-              name: true,
-            },
-          })
-          .zip()
-          .run(this.rdbConn);
+        // cursor = await r.table(table).eqJoin('image_id', r.table('image'))
+        //   .map(doc => doc.merge(() => ({ right: { image: doc('right')('name') } })))
+        //   .without({
+        //     left: {
+        //       image_id: true,
+        //     },
+        //     right: {
+        //       id: true,
+        //       name: true,
+        //     },
+        //   })
+        //   .zip()
+        //   .run(this.rdbConn);
+        q = this.dConn.createQuery([table]);
       }
-      result = await cursor.toArray();
 
-      return result;
+      result = await this.dConn.runQuery(q);
     } catch (err) {
       if (err) throw err;
     }
 
-    return result;
+    return result[0];
   }
 
-  async getByCategory(table, category) {
-    let result;
-    try {
-      const cursor = await r.table(table).filter({ category_id: category }).run(this.rdbConn);
-      result = await cursor.toArray();
+  // async getByCategory(table, category) {
+  //   let result;
+  //   try {
+  //     const cursor = await r.table(table).filter({ category_id: category }).run(this.rdbConn);
+  //     result = await cursor.toArray();
 
-      return result;
-    } catch (err) {
-      if (err) throw err;
-    }
+  //     return result;
+  //   } catch (err) {
+  //     if (err) throw err;
+  //   }
 
-    return result;
-  }
+  //   return result;
+  // }
 
   async getAllByCategory(table) {
-    let result;
+    let result = [];
     try {
-      const cursor = await r.table('category').merge((obj) => {
-        const ret = {};
-        ret[`${table}s`] = r.table(table).getAll(obj('id'),
-          { index: 'category_id' }).coerceTo('array');
-        return ret;
-      }).run(this.rdbConn);
-      result = await cursor.toArray();
+      // const cursor = await r.table('category').merge((obj) => {
+      //   const ret = {};
+      //   ret[`${table}s`] = r.table(table).getAll(obj('id'),
+      //     { index: 'category_id' }).coerceTo('array');
+      //   return ret;
+      // }).run(this.rdbConn);
+      // result = await cursor.toArray();
 
-      return result;
+      const q = this.dConn.createQuery(table);
+      result = await this.dConn.runQuery(q);
     } catch (err) {
       if (err) throw err;
     }
 
-    return result;
+    console.log(result[0][0][Datastore.KEY].id);
+
+    return result[0];
   }
 
   async getById(table, id, withImage = false) {
-    let result;
+    let result = [];
 
     try {
       if (!withImage) {
-        result = await r.table(table).get(id).run(this.rdbConn);
+        const key = this.dConn.key([table, +id]);
+        result = await this.dConn.get(key);
       } else {
-        const cursor = await r.table(table).filter({ id }).eqJoin('image_id', r.table('image'))
-          .map(doc => doc.merge(() => ({ right: { image: doc('right')('name') } })))
-          .without({
-            left: {
-              image_id: true,
-            },
-            right: {
-              id: true,
-              name: true,
-            },
-          })
-          .zip()
-          .run(this.rdbConn);
-        result = await cursor.next();
+        // const cursor = await r.table(table).filter({ id }).eqJoin('image_id', r.table('image'))
+        //   .map(doc => doc.merge(() => ({ right: { image: doc('right')('name') } })))
+        //   .without({
+        //     left: {
+        //       image_id: true,
+        //     },
+        //     right: {
+        //       id: true,
+        //       name: true,
+        //     },
+        //   })
+        //   .zip()
+        //   .run(this.rdbConn);
+        // result = await cursor.next();
+        const key = this.dConn.key([table, +id]);
+        result = await this.dConn.get(key);
       }
     } catch (err) {
       if (err) throw err;
     }
 
-    return result;
-  }
-
-  async close() {
-    try {
-      await this.rdbConn.close();
-    } catch (err) {
-      if (err) throw err;
-    }
+    return result[0];
   }
 
   /*
-  * Create a RethinkDB connection, and save it in ctx.rdbConn
+  * Create a dataStore connection, and save it in ctx.rdbConn
   */
   static async init(ctx, next) {
     try {
-      const conn = await r.connect(config.RETHINKDB);
+      const conn = await Datastore();
       ctx.db = new Db(conn);
       await next();
     } catch (err) {
