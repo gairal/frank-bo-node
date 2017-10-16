@@ -1,37 +1,52 @@
 import http from 'http';
-import r from 'rethinkdb';
-import config from 'config';
+import Datastore from '@google-cloud/datastore';
 import { logger } from '../globals';
 
 class Db {
-  constructor(rdbConn) {
-    this.rdbConn = rdbConn;
+  constructor(dConn) {
+    this.dConn = dConn;
   }
 
-  async getAll(table, withImage = false) {
-    let result;
+  async getAll(kind, withImage = false) {
+    let result = [];
     try {
-      let cursor;
       if (!withImage) {
-        cursor = await r.table(table).run(this.rdbConn);
+        const q = this.dConn.createQuery(kind);
+        result = await q.run();
       } else {
-        cursor = await r.table(table).eqJoin('image_id', r.table('image'))
-          .map(doc => doc.merge(() => ({ right: { image: doc('right')('name') } })))
-          .without({
-            left: {
-              image_id: true,
-            },
-            right: {
-              id: true,
-              name: true,
-            },
-          })
-          .zip()
-          .run(this.rdbConn);
+        const qKind = this.dConn.createQuery(kind);
+        const qImgs = this.dConn.createQuery('image');
+        result = await qKind.run();
+        const imgRes = await qImgs.run();
+
+        const imgs = imgRes[0];
+        const kinds = result[0];
+
+        // Order images in Object for fast access
+        const imgsObj = {};
+        let currImgId;
+        for (let i = 0, l = imgs.length; i < l; i += 1) {
+          currImgId = imgs[i][Datastore.KEY].id;
+          imgsObj[currImgId] = imgs[i];
+        }
+
+        for (let i = 0, l = kinds.length; i < l; i += 1) {
+          kinds[i].image = imgsObj[kinds[i].image.id];
+        }
       }
-      result = await cursor.toArray();
+    } catch (err) {
+      if (err) throw err;
+    }
 
-      return result;
+    return result[0];
+  }
+
+  async getByCategory(kind, category) {
+    let result;
+    try {
+      const q = this.dConn.createQuery(kind)
+        .filter('category', '=', this.dConn.key(['category', +category]));
+      result = await q.run();
     } catch (err) {
       if (err) throw err;
     }
@@ -39,60 +54,37 @@ class Db {
     return result;
   }
 
-  async getByCategory(table, category) {
-    let result;
+  async getAllByCategory(kind) {
+    const result = [];
     try {
-      const cursor = await r.table(table).filter({ category_id: category }).run(this.rdbConn);
-      result = await cursor.toArray();
+      const qKind = this.dConn.createQuery(kind);
+      const qCats = this.dConn.createQuery('category');
+      const tableRes = await qKind.run();
+      const catRes = await qCats.run();
 
-      return result;
-    } catch (err) {
-      if (err) throw err;
-    }
+      const kinds = tableRes[0];
+      const cats = catRes[0];
 
-    return result;
-  }
+      // Order categories in Object for fast access
+      const catsObj = {};
+      let currCatId;
+      for (let i = 0, l = cats.length; i < l; i += 1) {
+        currCatId = cats[i][Datastore.KEY].id;
+        catsObj[currCatId] = cats[i];
+      }
 
-  async getAllByCategory(table) {
-    let result;
-    try {
-      const cursor = await r.table('category').merge((obj) => {
-        const ret = {};
-        ret[`${table}s`] = r.table(table).getAll(obj('id'),
-          { index: 'category_id' }).coerceTo('array');
-        return ret;
-      }).run(this.rdbConn);
-      result = await cursor.toArray();
+      let kindCatId;
+      let currCat;
+      for (let i = 0, l = kinds.length; i < l; i += 1) {
+        kindCatId = kinds[i].category.id;
+        currCat = catsObj[kindCatId];
+        if (typeof catsObj[kindCatId].index === 'undefined') {
+          const newLength = result.push(Object.assign({ skills: [] }, currCat));
+          currCat.index = newLength - 1;
+        }
 
-      return result;
-    } catch (err) {
-      if (err) throw err;
-    }
-
-    return result;
-  }
-
-  async getById(table, id, withImage = false) {
-    let result;
-
-    try {
-      if (!withImage) {
-        result = await r.table(table).get(id).run(this.rdbConn);
-      } else {
-        const cursor = await r.table(table).filter({ id }).eqJoin('image_id', r.table('image'))
-          .map(doc => doc.merge(() => ({ right: { image: doc('right')('name') } })))
-          .without({
-            left: {
-              image_id: true,
-            },
-            right: {
-              id: true,
-              name: true,
-            },
-          })
-          .zip()
-          .run(this.rdbConn);
-        result = await cursor.next();
+        delete kinds[i].category;
+        result[currCat.index].skills.push(kinds[i]);
       }
     } catch (err) {
       if (err) throw err;
@@ -101,20 +93,31 @@ class Db {
     return result;
   }
 
-  async close() {
+  async getById(kind, id, withImage = false) {
+    let result = [];
+
     try {
-      await this.rdbConn.close();
+      const key = this.dConn.key([kind, +id]);
+      result = await this.dConn.get(key);
+
+      if (withImage) {
+        const imgKey = this.dConn.key(['image', +result[0].image.id]);
+        const img = await this.dConn.get(imgKey);
+        result[0].image = img[0];
+      }
     } catch (err) {
       if (err) throw err;
     }
+
+    return result[0];
   }
 
   /*
-  * Create a RethinkDB connection, and save it in ctx.rdbConn
+  * Create a dataStore connection, and save it in ctx.rdbConn
   */
   static async init(ctx, next) {
     try {
-      const conn = await r.connect(config.RETHINKDB);
+      const conn = await Datastore();
       ctx.db = new Db(conn);
       await next();
     } catch (err) {
