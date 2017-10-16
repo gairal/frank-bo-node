@@ -1,12 +1,4 @@
 {
-  "DB": {
-    "HOST": "localhost",
-    "PORT": 28015,
-    "DB": "gairal_frank",
-    "AUTH_KEY": "",
-    "DISCOVERY": true,
-    "TIMEOUT": 60
-  },
   "KOA": {
     "PORT": 3000
   },

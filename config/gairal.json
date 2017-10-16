@@ -1,8 +1,4 @@
 {
-  "DATASTORE": {
-    "projectId": "com-gairal-frank",
-    "keyFilename": "./datastore.json"
-  },
   "KOA": {
     "port": 3000
   },
