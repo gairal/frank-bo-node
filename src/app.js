@@ -10,7 +10,7 @@ import rootRoutes from './routes/index';
 import swaggerRoutes from './routes/swagger';
 import skillRoutes from './routes/skills';
 import travelRoutes from './routes/travels';
-import experienceRoutes from './routes/experiences';
+import worksRoutes from './routes/works';
 import educationRoutes from './routes/educations';
 import interestRoutes from './routes/interests';
 import db from './services/database';
@@ -37,7 +37,7 @@ app.use(swaggerRoutes.routes());
 app.use(skillRoutes.routes());
 app.use(rootRoutes.routes());
 app.use(travelRoutes.routes());
-app.use(experienceRoutes.routes());
+app.use(worksRoutes.routes());
 app.use(educationRoutes.routes());
 app.use(interestRoutes.routes());
 

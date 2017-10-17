@@ -13,7 +13,7 @@ const options = {
   apis: [
     './src/routes/swagger.js',
     './src/routes/educations.js',
-    './src/routes/experiences.js',
+    './src/routes/works.js',
     './src/routes/interests.js',
     './src/routes/skills.js',
     './src/routes/travels.js',
@@ -29,8 +29,8 @@ router.get('/swagger.json', async (ctx) => {
  * tags:
  *  - name: education
  *    description: Everything about Frank's education
- *  - name: experience
- *    description: Everything about Frank's experiences
+ *  - name: work
+ *    description: Everything about Frank's work experiences
  *  - name: skill
  *    description: Everything about Frank's skills
  *  - name: interest
@@ -71,7 +71,7 @@ router.get('/swagger.json', async (ctx) => {
  *         type: string
  *       extra:
  *         type: string
- *   Experience:
+ *   Work:
  *     type: object
  *     required:
  *       - id

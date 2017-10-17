@@ -3,19 +3,19 @@ import Datastore from '@google-cloud/datastore';
 import { logger } from '../globals';
 
 class Db {
-  constructor(dConn) {
-    this.dConn = dConn;
+  constructor(ds) {
+    this.ds = ds;
   }
 
   async getAll(kind, withImage = false) {
     let result = [];
     try {
       if (!withImage) {
-        const q = this.dConn.createQuery(kind);
+        const q = this.ds.createQuery(kind);
         result = await q.run();
       } else {
-        const qKind = this.dConn.createQuery(kind);
-        const qImgs = this.dConn.createQuery('image');
+        const qKind = this.ds.createQuery(kind);
+        const qImgs = this.ds.createQuery('image');
         result = await qKind.run();
         const imgRes = await qImgs.run();
 
@@ -44,8 +44,8 @@ class Db {
   async getByCategory(kind, category) {
     let result;
     try {
-      const q = this.dConn.createQuery(kind)
-        .filter('category', '=', this.dConn.key(['category', +category]));
+      const q = this.ds.createQuery(kind)
+        .filter('category', '=', this.ds.key(['category', +category]));
       result = await q.run();
     } catch (err) {
       if (err) throw err;
@@ -57,8 +57,8 @@ class Db {
   async getAllByCategory(kind) {
     const result = [];
     try {
-      const qKind = this.dConn.createQuery(kind);
-      const qCats = this.dConn.createQuery('category');
+      const qKind = this.ds.createQuery(kind);
+      const qCats = this.ds.createQuery('category');
       const tableRes = await qKind.run();
       const catRes = await qCats.run();
 
@@ -97,12 +97,12 @@ class Db {
     let result = [];
 
     try {
-      const key = this.dConn.key([kind, +id]);
-      result = await this.dConn.get(key);
+      const key = this.ds.key([kind, +id]);
+      result = await this.ds.get(key);
 
       if (withImage) {
-        const imgKey = this.dConn.key(['image', +result[0].image.id]);
-        const img = await this.dConn.get(imgKey);
+        const imgKey = this.ds.key(['image', +result[0].image.id]);
+        const img = await this.ds.get(imgKey);
         result[0].image = img[0];
       }
     } catch (err) {
