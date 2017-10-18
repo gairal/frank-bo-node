@@ -31,6 +31,32 @@ router.get('/', async (ctx) => {
 
 /**
  * @swagger
+ * /interests/categories:
+ *   get:
+ *     description: Get the interests ordered by categories
+ *     produces:
+ *       - application/json
+ *     responses:
+ *       200:
+ *         description: an array of Categories
+ *         schema:
+ *           type: array
+ *           items:
+ *             $ref: '#/definitions/InterestsByCategory'
+ *     tags:
+ *       - interest
+ */
+router.get('/categories', async (ctx) => {
+  try {
+    const result = await ctx.db.getAllByCategory('interest', false);
+    ctx.body = result;
+  } catch (err) {
+    utils.log(ctx, err);
+  }
+});
+
+/**
+ * @swagger
  * /interests/{id}:
  *   get:
  *     description: GET an interest detail

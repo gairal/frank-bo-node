@@ -69,37 +69,48 @@ class Db {
     return result;
   }
 
-  async getAllByCategory(kind) {
-    const result = [];
+  async getAllByCategory(kind, descending = null, orderCol) {
+    let result = [];
     try {
       const qKind = this.ds.createQuery(kind);
-      const qCats = this.ds.createQuery('category');
+      if (descending !== null) {
+        const order = orderCol || 'order';
+        qKind.order(order, {
+          descending,
+        });
+      }
+
+      const qCats = this.ds.createQuery('category')
+        .order('order');
       const tableRes = await qKind.run();
       const catRes = await qCats.run();
 
       const kinds = tableRes[0];
-      const cats = catRes[0];
+      result = catRes[0];
 
       // Order categories in Object for fast access
       const catsObj = {};
-      let currCatId;
-      for (let i = 0, l = cats.length; i < l; i += 1) {
-        currCatId = cats[i][Datastore.KEY].id;
-        catsObj[currCatId] = cats[i];
+      for (let i = 0, l = result.length; i < l; i += 1) {
+        const currCatId = result[i][Datastore.KEY].id;
+        catsObj[currCatId] = result[i];
+        catsObj[currCatId].index = i;
       }
 
-      let kindCatId;
-      let currCat;
+      const key = `${kind}s`;
       for (let i = 0, l = kinds.length; i < l; i += 1) {
-        kindCatId = kinds[i].category.id;
-        currCat = catsObj[kindCatId];
-        if (typeof catsObj[kindCatId].index === 'undefined') {
-          const newLength = result.push(Object.assign({ skills: [] }, currCat));
-          currCat.index = newLength - 1;
+        const currCat = catsObj[kinds[i].category.id];
+        if (typeof result[currCat.index][key] === 'undefined') {
+          result[currCat.index][key] = [];
         }
 
         delete kinds[i].category;
-        result[currCat.index].skills.push(kinds[i]);
+        result[currCat.index][key].push(kinds[i]);
+      }
+
+      for (let i = result.length - 1; i >= 0; i -= 1) {
+        if (typeof result[i][key] === 'undefined') {
+          result.splice(i, 1);
+        }
       }
     } catch (err) {
       if (err) throw err;

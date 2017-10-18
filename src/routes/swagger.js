@@ -186,6 +186,18 @@ router.get('/swagger.json', async (ctx) => {
  *             type: array
  *             items:
  *               - $ref: Skill
+ *   InterestsByCategory:
+ *     allOf:
+ *       - $ref: '#/definitions/Interest'
+ *       -
+ *         type: object
+ *         required:
+ *           - interests
+ *         properties:
+ *           interests:
+ *             type: array
+ *             items:
+ *               - $ref: Interest
  */
 
 export default router;
