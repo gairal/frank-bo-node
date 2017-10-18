@@ -22,7 +22,7 @@ const router = new Router({ prefix: '/educations' });
  */
 router.get('/', async (ctx) => {
   try {
-    const result = await ctx.db.getAll('education', true);
+    const result = await ctx.db.getAll('education', true, 'year_in');
     ctx.body = result;
   } catch (err) {
     utils.log(ctx, err);
@@ -54,7 +54,7 @@ router.get('/:id', async (ctx) => {
   const education = ctx.params.id;
 
   try {
-    const result = await ctx.db.getById('education', education, true);
+    const result = await ctx.db.getById('education', education);
     ctx.body = result;
   } catch (err) {
     utils.log(ctx, err);

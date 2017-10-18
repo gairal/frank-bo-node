@@ -22,7 +22,7 @@ const router = new Router({ prefix: '/interests' });
  */
 router.get('/', async (ctx) => {
   try {
-    const result = await ctx.db.getAll('interest');
+    const result = await ctx.db.getAll('interest', false);
     ctx.body = result;
   } catch (err) {
     utils.log(ctx, err);

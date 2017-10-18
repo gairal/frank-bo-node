@@ -7,16 +7,31 @@ class Db {
     this.ds = ds;
   }
 
-  async getAll(kind, withImage = false) {
+  /**
+   *
+   *
+   * @param {any} kind
+   * @param {boolean} [withImage=false]
+   * @param {any} [descending=null]
+   * @param {any} orderCol
+   * @returns
+   * @memberof Db
+   */
+  async getAll(kind, descending = null, orderCol) {
     let result = [];
     try {
-      if (!withImage) {
-        const q = this.ds.createQuery(kind);
-        result = await q.run();
-      } else {
-        const qKind = this.ds.createQuery(kind);
+      const q = this.ds.createQuery(kind);
+      if (descending !== null) {
+        const order = orderCol || 'order';
+        q.order(order, {
+          descending,
+        });
+      }
+
+      result = await q.run();
+
+      if (typeof result[0][0].image !== 'undefined') {
         const qImgs = this.ds.createQuery('image');
-        result = await qKind.run();
         const imgRes = await qImgs.run();
 
         const imgs = imgRes[0];
@@ -93,14 +108,14 @@ class Db {
     return result;
   }
 
-  async getById(kind, id, withImage = false) {
+  async getById(kind, id) {
     let result = [];
 
     try {
       const key = this.ds.key([kind, +id]);
       result = await this.ds.get(key);
 
-      if (withImage) {
+      if (typeof result[0].image !== 'undefined') {
         const imgKey = this.ds.key(['image', +result[0].image.id]);
         const img = await this.ds.get(imgKey);
         result[0].image = img[0];
