@@ -4,6 +4,7 @@ import views from 'koa-views';
 import serve from 'koa-static';
 import config from 'config';
 import morgan from 'koa-morgan';
+import cors from '@koa/cors';
 import { create, logger } from './globals';
 
 import rootRoutes from './routes/index';
@@ -29,6 +30,7 @@ if (config.LOG_LEVEL === 'debug') {
 app.use(utils.requestTime);
 // Create a RethinkDB connection
 app.use(db.init);
+app.use(cors());
 
 app.use(views(`${__dirname}/views`, { extension: 'pug' }));
 app.use(serve(`${__dirname}/public`));
