@@ -138,6 +138,20 @@ class Db {
     return result[0];
   }
 
+  async getSkillsFromId(kind, id) {
+    let result = [];
+
+    try {
+      const key = this.ds.key([kind, +id]);
+      result = await this.ds.get(key);
+      // TODO
+    } catch (err) {
+      if (err) throw err;
+    }
+
+    return result[0];
+  }
+
   /*
   * Create a dataStore connection, and save it in ctx.rdbConn
   */

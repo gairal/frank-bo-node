@@ -44,17 +44,47 @@ router.get('/', async (ctx) => {
  *         type: string
  *     responses:
  *       200:
- *         description: an Work object
+ *         description: a Work object
  *         schema:
  *           $ref: '#/definitions/Work'
  *     tags:
  *       - work
  */
 router.get('/:id', async (ctx) => {
-  const work = ctx.params.id;
-
   try {
-    const result = await ctx.db.getById('work', work);
+    const result = await ctx.db.getById('work', ctx.params.id);
+    ctx.body = result;
+  } catch (err) {
+    utils.log(ctx, err);
+  }
+});
+
+/**
+ * @swagger
+ * /works/{id}/skills:
+ *   get:
+ *     description: GET Skills linked to a work experience
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: id
+ *         description: Work id
+ *         in: path
+ *         required: true
+ *         type: string
+ *     responses:
+ *       200:
+ *         description: an array of Skill objects
+ *         schema:
+ *           type: array
+ *           items:
+ *             $ref: '#/definitions/Skill'
+ *     tags:
+ *       - work
+ */
+router.get('/:id/skills', async (ctx) => {
+  try {
+    const result = await ctx.db.getSkillsFromId('work', ctx.params.id);
     ctx.body = result;
   } catch (err) {
     utils.log(ctx, err);
