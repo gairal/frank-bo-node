@@ -142,8 +142,13 @@ class Db {
     let result = [];
 
     try {
+      const kinds = `${kind}s`;
       const key = this.ds.key([kind, +id]);
-      result = await this.ds.get(key);
+      const q = this.ds.createQuery('skill')
+        // .filter('level', 80);
+        .filter(kinds, key);
+
+      result = await q.run();
       // TODO
     } catch (err) {
       if (err) throw err;
