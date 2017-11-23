@@ -22,7 +22,7 @@ const router = new Router({ prefix: '/works' });
  */
 router.get('/', async (ctx) => {
   try {
-    const result = await ctx.db.getAll('work', false);
+    const result = await ctx.db.getAll('work', false, 'date_in');
     ctx.body = result;
   } catch (err) {
     utils.log(ctx, err);
