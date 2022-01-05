@@ -1,6 +1,0 @@
-{
-  "KOA": {
-    "port": 3000
-  },
-  "LOG_LEVEL": "debug"
-}

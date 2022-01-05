@@ -1,6 +1,5 @@
-import http from 'http';
-import Datastore from '@google-cloud/datastore';
-import { logger } from '../globals';
+import http from "http";
+import Datastore from "@google-cloud/datastore";
 
 class Db {
   constructor(ds) {
@@ -22,7 +21,7 @@ class Db {
     try {
       const q = this.ds.createQuery(kind);
       if (descending !== null) {
-        const order = orderCol || 'order';
+        const order = orderCol || "order";
         q.order(order, {
           descending,
         });
@@ -30,8 +29,8 @@ class Db {
 
       result = await q.run();
 
-      if (typeof result[0][0].image !== 'undefined') {
-        const qImgs = this.ds.createQuery('image');
+      if (typeof result[0][0].image !== "undefined") {
+        const qImgs = this.ds.createQuery("image");
         const imgRes = await qImgs.run();
 
         const imgs = imgRes[0];
@@ -59,8 +58,9 @@ class Db {
   async getByCategory(kind, category) {
     let result;
     try {
-      const q = this.ds.createQuery(kind)
-        .filter('category', '=', this.ds.key(['category', +category]));
+      const q = this.ds
+        .createQuery(kind)
+        .filter("category", "=", this.ds.key(["category", +category]));
       result = await q.run();
     } catch (err) {
       if (err) throw err;
@@ -74,14 +74,13 @@ class Db {
     try {
       const qKind = this.ds.createQuery(kind);
       if (descending !== null) {
-        const order = orderCol || 'order';
+        const order = orderCol || "order";
         qKind.order(order, {
           descending,
         });
       }
 
-      const qCats = this.ds.createQuery('category')
-        .order('order');
+      const qCats = this.ds.createQuery("category").order("order");
       const tableRes = await qKind.run();
       const catRes = await qCats.run();
 
@@ -99,7 +98,7 @@ class Db {
       const key = `${kind}s`;
       for (let i = 0, l = kinds.length; i < l; i += 1) {
         const currCat = catsObj[kinds[i].category.id];
-        if (typeof result[currCat.index][key] === 'undefined') {
+        if (typeof result[currCat.index][key] === "undefined") {
           result[currCat.index][key] = [];
         }
 
@@ -108,7 +107,7 @@ class Db {
       }
 
       for (let i = result.length - 1; i >= 0; i -= 1) {
-        if (typeof result[i][key] === 'undefined') {
+        if (typeof result[i][key] === "undefined") {
           result.splice(i, 1);
         }
       }
@@ -126,8 +125,8 @@ class Db {
       const key = this.ds.key([kind, +id]);
       result = await this.ds.get(key);
 
-      if (typeof result[0].image !== 'undefined') {
-        const imgKey = this.ds.key(['image', +result[0].image.id]);
+      if (typeof result[0].image !== "undefined") {
+        const imgKey = this.ds.key(["image", +result[0].image.id]);
         const img = await this.ds.get(imgKey);
         result[0].image = img[0];
       }
@@ -144,7 +143,8 @@ class Db {
     try {
       const kinds = `${kind}s`;
       const key = this.ds.key([kind, +id]);
-      const q = this.ds.createQuery('skill')
+      const q = this.ds
+        .createQuery("skill")
         // .filter('level', 80);
         .filter(kinds, key);
 
@@ -158,15 +158,15 @@ class Db {
   }
 
   /*
-  * Create a dataStore connection, and save it in ctx.rdbConn
-  */
+   * Create a dataStore connection, and save it in ctx.rdbConn
+   */
   static async init(ctx, next) {
     try {
       const conn = await Datastore();
       ctx.db = new Db(conn);
       await next();
     } catch (err) {
-      logger().error(err.message);
+      logger.error(err.message);
       ctx.status = 500;
       ctx.body = err.message || http.STATUS_CODES[ctx.status];
     }
