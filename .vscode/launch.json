@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Attach To Server",
+      "port": 9229,
+      "request": "attach",
+      "restart": true,
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
+    }
+  ]
+}
