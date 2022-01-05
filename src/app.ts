@@ -1,5 +1,5 @@
 import * as Koa from "koa";
-import * as koaLogger from "koa-logger";
+import * as logger from "koa-logger";
 import * as cors from "@koa/cors";
 
 import rootRoutes from "./routes/index";
@@ -15,7 +15,7 @@ import { LOG_LEVEL } from "./env";
 export const app = new Koa();
 
 if (LOG_LEVEL === "debug") {
-  app.use(koaLogger());
+  app.use(logger());
 }
 
 app.use(db.init);
