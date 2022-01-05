@@ -1,9 +1,7 @@
-# Koa v2 Skeleton
+# frank.gairal.com
 
 ## todo
 
 [] github action
-[] husky
 [] jest
-[] memory store?
 [] delete old google cloud project

@@ -1,6 +1,3 @@
 node_modules
+dist
 .env
-rethinkdb_data
-
-npm-debug.log
-datastore.json

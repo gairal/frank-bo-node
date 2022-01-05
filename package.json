@@ -2,10 +2,11 @@
   "name": "frank-gairal-bo",
   "version": "3.0.0",
   "scripts": {
-    "start": "node dist",
+    "build": "tsc",
     "lint": "eslint ./src",
-    "watch": "ts-node-dev --respawn --inspect -- ./src/index.ts",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "start": "node dist",
+    "watch": "ts-node-dev --respawn --inspect -- ./src/index.ts"
   },
   "devDependencies": {
     "@types/jest": "^27.4.0",

@@ -1,15 +1,11 @@
 install:
-	npm install
-
-migrate:
-	rethink-migrate down --all
-	rethink-migrate up --all
+	yarn
 
 run:
-	npm run start
+	yarn start
 
 watch:
-	npm run watch
+	yarn watch
 
 start-prod:
 	pm2 start ecosystem.config.js --env production
