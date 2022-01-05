@@ -5,7 +5,7 @@ module.exports = {
       files: ["**/__tests__/**/*.ts"],
       extends: ["plugin:jest/recommended"],
       rules: {
-        "jest/consistent-test-it": ["error", { fn: "it" }],
+        "jest/consistent-test-it": ["error", { fn: "test" }],
         "jest/expect-expect": [
           "error",
           {

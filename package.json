@@ -6,6 +6,8 @@
     "lint": "eslint src/**",
     "prepare": "husky install",
     "start": "node dist",
+    "test": "jest",
+    "test-cov": "yarn test --collectCoverage",
     "watch": "ts-node-dev --respawn --inspect -- ./src/index.ts"
   },
   "devDependencies": {
@@ -24,6 +26,7 @@
     "husky": "^7.0.4",
     "jest": "^27.4.6",
     "prettier": "^2.5.1",
+    "supertest": "^6.1.6",
     "ts-jest": "^27.1.2",
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.5.4"
