@@ -2,7 +2,9 @@
   "name": "frank-gairal-bo",
   "version": "3.0.0",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -p .",
+    "deploy": "gcloud app deploy --project com-gairal-frank-22",
+    "gcp-build": "npm run build",
     "lint": "eslint src/**",
     "prepare": "husky install",
     "start": "node dist",
