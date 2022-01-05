@@ -1,6 +1,8 @@
 {
   "name": "frank-gairal-bo",
   "version": "3.0.0",
+  "author": "@gairal",
+  "private": true,
   "scripts": {
     "build": "tsc -p .",
     "deploy": "gcloud app deploy --project com-gairal-frank-22",
