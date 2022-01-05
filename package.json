@@ -4,7 +4,8 @@
   "scripts": {
     "start": "node dist",
     "lint": "eslint ./src",
-    "watch": "ts-node-dev --respawn --inspect -- ./src/index.ts"
+    "watch": "ts-node-dev --respawn --inspect -- ./src/index.ts",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@types/jest": "^27.4.0",

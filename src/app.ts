@@ -14,7 +14,6 @@ export const app = new Koa();
 
 /** SETUP */
 
-
 if (LOG_LEVEL === "debug") {
   app.use(logger());
 }
