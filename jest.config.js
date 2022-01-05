@@ -4,7 +4,7 @@ module.exports = {
   coveragePathIgnorePatterns: ["<rootDir>/built/", "<rootDir>/node_modules/"],
   coverageReporters: ["html", "text", "text-summary"],
   coverageThreshold: {
-    global: { branches: 100, functions: 100, lines: 100, statements: 100 },
+    global: { branches: 80, functions: 100, lines: 100, statements: 100 },
   },
   moduleFileExtensions: ["js", "ts", "json"],
   testEnvironment: "node",

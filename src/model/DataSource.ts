@@ -10,14 +10,14 @@ export class DataSource {
   }
 
   async getAll() {
-    const documents = await this.ref.get();
+    const snapshot = await this.ref.get();
 
-    return documents;
+    return snapshot.docs.map((doc) => doc.data());
   }
 
   async getById(id: string) {
-    const document = await this.ref.doc(id).get();
+    const snapshot = await this.ref.doc(id).get();
 
-    return document;
+    return snapshot.data();
   }
 }

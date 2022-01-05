@@ -1,12 +1,8 @@
 import { mockGoogleCloudFirestore } from "firestore-jest-mock";
 
+import { educationFixture } from "./education";
+
 export const mockDb = () =>
   mockGoogleCloudFirestore({
-    database: {
-      education: [
-        { id: "abc123", name: "Homer Simpson" },
-        { id: "abc456", name: "Lisa Simpson" },
-      ],
-      posts: [{ id: "123abc", title: "Really cool title" }],
-    },
+    database: { education: educationFixture() },
   });
