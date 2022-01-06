@@ -7,7 +7,7 @@ import { travelRouter } from "./routes/travel";
 import { workRouter } from "./routes/work";
 import { educationRouter } from "./routes/education";
 import { interestRouter } from "./routes/interest";
-import { LOG_LEVEL, PORT } from "./env";
+import { LOG_LEVEL } from "./env";
 import { errorHandler } from "./lib/errorHandler";
 
 export const app = new Koa();
@@ -31,7 +31,7 @@ app.use(
         return "*";
       }
 
-      return `http://localhost:${PORT}`;
+      return "http://localhost:5000";
     },
   })
 );
