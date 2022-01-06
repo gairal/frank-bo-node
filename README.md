@@ -1,4 +1,4 @@
-# frank.gairal.com
+# frank.gairal.com API
 
 ## todo
 

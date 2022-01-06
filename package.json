@@ -1,7 +1,9 @@
 {
   "name": "frank-gairal-bo",
   "version": "3.0.0",
+  "main": "dist/index.js",
   "author": "@gairal",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "build": "tsc -p .",
