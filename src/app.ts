@@ -7,7 +7,7 @@ import { travelRouter } from "./routes/travel";
 import { workRouter } from "./routes/work";
 import { educationRouter } from "./routes/education";
 import { interestRouter } from "./routes/interest";
-import { LOG_LEVEL } from "./env";
+import { LOG_LEVEL, PORT } from "./env";
 import { errorHandler } from "./lib/errorHandler";
 
 export const app = new Koa();
@@ -19,7 +19,22 @@ if (LOG_LEVEL === "debug") {
 }
 
 app.use(errorHandler);
-app.use(cors());
+app.use(
+  cors({
+    allowMethods: ["GET"],
+    origin: (ctx) => {
+      if (
+        ["gairal.com", "gairal.rocks"].some((domain) =>
+          ctx.hostname.includes(domain)
+        )
+      ) {
+        return "*";
+      }
+
+      return `http://localhost:${PORT}`;
+    },
+  })
+);
 
 /** ROUTES */
 
