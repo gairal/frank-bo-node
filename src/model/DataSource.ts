@@ -1,12 +1,12 @@
-import { CollectionReference } from "@google-cloud/firestore";
+import { CollectionReference, DocumentData } from "@google-cloud/firestore";
 
 import { firestore } from "../lib/db";
 
-export class DataSource {
-  private ref: CollectionReference;
+export class DataSource<T = DocumentData> {
+  private ref: CollectionReference<T>;
 
   constructor(collection: string) {
-    this.ref = firestore.collection(collection);
+    this.ref = firestore.collection(collection) as CollectionReference<T>;
   }
 
   async getAll() {

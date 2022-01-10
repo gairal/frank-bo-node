@@ -1,7 +1,23 @@
-export const educationFixture = () => [
+import { FirestoreEducation } from "../../src/types/education";
+
+export const educationFixture = (): FirestoreEducation[] => [
   {
-    dateIn: { _nanoseconds: 884000000, _seconds: 1125673872 },
-    dateOut: { _nanoseconds: 978000000, _seconds: 1214925112 },
+    dateIn: {
+      isEqual: () => true,
+      nanoseconds: 884000000,
+      seconds: 1125673872,
+      toDate: () => undefined,
+      toMillis: () => undefined,
+      valueOf: () => "",
+    },
+    dateOut: {
+      isEqual: () => true,
+      nanoseconds: 978000000,
+      seconds: 1214925112,
+      toDate: () => undefined,
+      toMillis: () => undefined,
+      valueOf: () => "",
+    },
     diploma:
       "Master in engineering specialized in Information Technology - Option software engineering",
     extra:
@@ -18,8 +34,22 @@ export const educationFixture = () => [
     website: "http://www.efrei.fr",
   },
   {
-    dateIn: { _nanoseconds: 884000000, _seconds: 1062515472 },
-    dateOut: { _nanoseconds: 978000000, _seconds: 1120230712 },
+    dateIn: {
+      isEqual: () => true,
+      nanoseconds: 884000000,
+      seconds: 1062515472,
+      toDate: () => undefined,
+      toMillis: () => undefined,
+      valueOf: () => "",
+    },
+    dateOut: {
+      isEqual: () => true,
+      nanoseconds: 978000000,
+      seconds: 1120230712,
+      toDate: () => undefined,
+      toMillis: () => undefined,
+      valueOf: () => "",
+    },
     diploma:
       "BTS (Two-year university degree in Information Technology and Management) - Option application developer",
     id: "2",
@@ -34,8 +64,22 @@ export const educationFixture = () => [
     website: "http://www.enc-bessieres.org",
   },
   {
-    dateIn: { _nanoseconds: 884000000, _seconds: 967907472 },
-    dateOut: { _nanoseconds: 978000000, _seconds: 994000312 },
+    dateIn: {
+      isEqual: () => true,
+      nanoseconds: 884000000,
+      seconds: 967907472,
+      toDate: () => undefined,
+      toMillis: () => undefined,
+      valueOf: () => "",
+    },
+    dateOut: {
+      isEqual: () => true,
+      nanoseconds: 978000000,
+      seconds: 994000312,
+      toDate: () => undefined,
+      toMillis: () => undefined,
+      valueOf: () => "",
+    },
     diploma:
       "Baccalauréat S (High-school degree specialized in Science) with distinction",
     id: "3",
