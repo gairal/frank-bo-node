@@ -2,8 +2,8 @@ module.exports = {
   extends: "airbnb-typescript-prettier",
   overrides: [
     {
-      files: ["**/__tests__/**/*.ts"],
       extends: ["plugin:jest/recommended"],
+      files: ["**/__tests__/**/*.ts"],
       rules: {
         "jest/consistent-test-it": ["error", { fn: "test" }],
         "jest/expect-expect": [
@@ -31,42 +31,47 @@ module.exports = {
           { additionalTestBlockFunctions: ["it.each"] },
         ],
         "jest/prefer-called-with": "error",
+        "jest/prefer-strict-equal": "error",
         "jest/prefer-to-be": "error",
         "jest/prefer-to-have-length": "error",
-        "jest/prefer-strict-equal": "error",
       },
     },
   ],
-  plugins: ["no-only-tests", "typescript-sort-keys"],
+  plugins: [
+    "no-only-tests",
+    "typescript-sort-keys",
+    "eslint-plugin-sort-keys-fix",
+  ],
   rules: {
     "@typescript-eslint/naming-convention": [
       "error",
       {
-        selector: "default",
         format: [],
+        selector: "default",
         trailingUnderscore: "forbid",
       },
       {
-        selector: "enumMember",
         format: ["PascalCase"],
+        selector: "enumMember",
       },
       {
-        selector: "typeLike",
         format: ["PascalCase"],
+        selector: "typeLike",
       },
     ],
     "import/order": [
       "error",
       {
-        "newlines-between": "always",
         groups: [
           "builtin",
           "external",
           ["internal", "parent", "sibling", "index"],
         ],
+        "newlines-between": "always",
       },
     ],
     "import/prefer-default-export": 0,
     "no-only-tests/no-only-tests": 2,
+    "sort-keys-fix/sort-keys-fix": 1,
   },
 };
