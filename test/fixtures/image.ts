@@ -1,0 +1,29 @@
+export const imageFixture = () => [
+  {
+    name: "spf.png",
+  },
+  {
+    name: "bk.png",
+  },
+  {
+    name: "enc.jpg",
+  },
+  {
+    name: "ratp.png",
+  },
+  {
+    name: "orange.png",
+  },
+  {
+    name: "ekino.png",
+  },
+  {
+    name: "efrei.png",
+  },
+  {
+    name: "alyzair.png",
+  },
+  {
+    name: "phonereader.png",
+  },
+];

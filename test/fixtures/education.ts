@@ -6,6 +6,7 @@ export const educationFixture = () => [
       "Master in engineering specialized in Information Technology - Option software engineering",
     extra:
       "Tutored mathematics to middle school students (14 yrs) with the association EAH (EFREI's humanitarian association).",
+    id: "1",
     image: {
       id: "5725107787923456",
       kind: "image",
@@ -21,6 +22,7 @@ export const educationFixture = () => [
     dateOut: { _nanoseconds: 978000000, _seconds: 1120230712 },
     diploma:
       "BTS (Two-year university degree in Information Technology and Management) - Option application developer",
+    id: "2",
     image: {
       id: "5705241014042624",
       kind: "image",
@@ -36,6 +38,7 @@ export const educationFixture = () => [
     dateOut: { _nanoseconds: 978000000, _seconds: 994000312 },
     diploma:
       "Baccalauréat S (High-school degree specialized in Science) with distinction",
+    id: "3",
     image: {
       id: "5687539843203072",
       kind: "image",
