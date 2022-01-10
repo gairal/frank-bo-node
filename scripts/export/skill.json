@@ -1,0 +1,894 @@
+[
+  {
+    "category": {
+      "id": "5732568548769792",
+      "kind": "category",
+      "path": [
+        "category",
+        "5732568548769792"
+      ]
+    },
+    "name": "Functional CSS",
+    "level": 100,
+    "description": ""
+  },
+  {
+    "level": 80,
+    "name": "ReactJS/Redux",
+    "description": "",
+    "category": {
+      "id": "5732568548769792",
+      "kind": "category",
+      "path": [
+        "category",
+        "5732568548769792"
+      ]
+    }
+  },
+  {
+    "description": "",
+    "name": "BEM",
+    "category": {
+      "id": "5732568548769792",
+      "kind": "category",
+      "path": [
+        "category",
+        "5732568548769792"
+      ]
+    },
+    "level": 100
+  },
+  {
+    "description": "",
+    "name": "Webpack",
+    "category": {
+      "id": "5732568548769792",
+      "kind": "category",
+      "path": [
+        "category",
+        "5732568548769792"
+      ]
+    },
+    "level": 100
+  },
+  {
+    "category": {
+      "id": "5732568548769792",
+      "kind": "category",
+      "path": [
+        "category",
+        "5732568548769792"
+      ]
+    },
+    "name": "VueJS",
+    "description": "",
+    "level": 70
+  },
+  {
+    "name": "GoLang",
+    "category": {
+      "id": "5700305828184064",
+      "kind": "category",
+      "path": [
+        "category",
+        "5700305828184064"
+      ]
+    },
+    "description": "",
+    "level": 20
+  },
+  {
+    "name": "SQL",
+    "category": {
+      "id": "5631986051842048",
+      "kind": "category",
+      "path": [
+        "category",
+        "5631986051842048"
+      ]
+    },
+    "level": 75
+  },
+  {
+    "level": 50,
+    "category": {
+      "id": "5700305828184064",
+      "kind": "category",
+      "path": [
+        "category",
+        "5700305828184064"
+      ]
+    },
+    "name": "C#/Windows Phone"
+  },
+  {
+    "name": "French",
+    "category": {
+      "id": "5639445604728832",
+      "kind": "category",
+      "path": [
+        "category",
+        "5639445604728832"
+      ]
+    },
+    "description": "native language",
+    "level": 100
+  },
+  {
+    "category": {
+      "id": "5700305828184064",
+      "kind": "category",
+      "path": [
+        "category",
+        "5700305828184064"
+      ]
+    },
+    "name": "Java/Android API",
+    "level": 25
+  },
+  {
+    "category": {
+      "id": "5700305828184064",
+      "kind": "category",
+      "path": [
+        "category",
+        "5700305828184064"
+      ]
+    },
+    "name": "Python",
+    "level": 50
+  },
+  {
+    "name": "Planning & cost",
+    "description": "Post-conception cost quantification, Optimisation of cost and time",
+    "category": {
+      "id": "5644406560391168",
+      "kind": "category",
+      "path": [
+        "category",
+        "5644406560391168"
+      ]
+    }
+  },
+  {
+    "category": {
+      "id": "5692462144159744",
+      "kind": "category",
+      "path": [
+        "category",
+        "5692462144159744"
+      ]
+    },
+    "name": "CentOS",
+    "level": 80
+  },
+  {
+    "category": {
+      "id": "5672749318012928",
+      "kind": "category",
+      "path": [
+        "category",
+        "5672749318012928"
+      ]
+    },
+    "name": "GIT, Gitlab",
+    "level": 80
+  },
+  {
+    "category": {
+      "id": "5631986051842048",
+      "kind": "category",
+      "path": [
+        "category",
+        "5631986051842048"
+      ]
+    },
+    "level": 75,
+    "name": "Oracle"
+  },
+  {
+    "name": "Spring Framework",
+    "category": {
+      "id": "5700305828184064",
+      "kind": "category",
+      "path": [
+        "category",
+        "5700305828184064"
+      ]
+    },
+    "level": 40
+  },
+  {
+    "level": 80,
+    "name": "SVN",
+    "category": {
+      "id": "5672749318012928",
+      "kind": "category",
+      "path": [
+        "category",
+        "5672749318012928"
+      ]
+    }
+  },
+  {
+    "name": "Grunt, Gulp",
+    "category": {
+      "id": "5732568548769792",
+      "kind": "category",
+      "path": [
+        "category",
+        "5732568548769792"
+      ]
+    },
+    "level": 90
+  },
+  {
+    "description": "fluent - TOEIC: 820pts",
+    "level": 75,
+    "category": {
+      "id": "5639445604728832",
+      "kind": "category",
+      "path": [
+        "category",
+        "5639445604728832"
+      ]
+    },
+    "name": "English"
+  },
+  {
+    "category": {
+      "id": "5634472569470976",
+      "kind": "category",
+      "path": [
+        "category",
+        "5634472569470976"
+      ]
+    },
+    "name": "Electronics"
+  },
+  {
+    "category": {
+      "id": "5654313976201216",
+      "kind": "category",
+      "path": [
+        "category",
+        "5654313976201216"
+      ]
+    },
+    "name": "MERISE2"
+  },
+  {
+    "name": "Technical specifications",
+    "category": {
+      "id": "5644406560391168",
+      "kind": "category",
+      "path": [
+        "category",
+        "5644406560391168"
+      ]
+    }
+  },
+  {
+    "category": {
+      "id": "5732568548769792",
+      "kind": "category",
+      "path": [
+        "category",
+        "5732568548769792"
+      ]
+    },
+    "name": "Foundation",
+    "level": 80
+  },
+  {
+    "category": {
+      "id": "5634472569470976",
+      "kind": "category",
+      "path": [
+        "category",
+        "5634472569470976"
+      ]
+    },
+    "name": "Economics"
+  },
+  {
+    "category": {
+      "id": "5732568548769792",
+      "kind": "category",
+      "path": [
+        "category",
+        "5732568548769792"
+      ]
+    },
+    "level": 75,
+    "name": "Bootstrap 3 & 4"
+  },
+  {
+    "name": "XSLT",
+    "level": 75,
+    "category": {
+      "id": "5700305828184064",
+      "kind": "category",
+      "path": [
+        "category",
+        "5700305828184064"
+      ]
+    }
+  },
+  {
+    "level": 50,
+    "name": "C/GTK+",
+    "category": {
+      "id": "5700305828184064",
+      "kind": "category",
+      "path": [
+        "category",
+        "5700305828184064"
+      ]
+    }
+  },
+  {
+    "category": {
+      "id": "5700305828184064",
+      "kind": "category",
+      "path": [
+        "category",
+        "5700305828184064"
+      ]
+    },
+    "name": "Visual Basic",
+    "level": 75
+  },
+  {
+    "category": {
+      "id": "5634472569470976",
+      "kind": "category",
+      "path": [
+        "category",
+        "5634472569470976"
+      ]
+    },
+    "name": "Quality control"
+  },
+  {
+    "name": "PML",
+    "description": "SFR mobile Meta Language",
+    "category": {
+      "id": "5700305828184064",
+      "kind": "category",
+      "path": [
+        "category",
+        "5700305828184064"
+      ]
+    },
+    "level": 75
+  },
+  {
+    "level": 75,
+    "name": "VBA Excel & Access",
+    "category": {
+      "id": "5700305828184064",
+      "kind": "category",
+      "path": [
+        "category",
+        "5700305828184064"
+      ]
+    }
+  },
+  {
+    "name": "Conception",
+    "category": {
+      "id": "5644406560391168",
+      "kind": "category",
+      "path": [
+        "category",
+        "5644406560391168"
+      ]
+    },
+    "description": "Brainstorming, storyboard, managing graphic design, ..."
+  },
+  {
+    "category": {
+      "id": "5654313976201216",
+      "kind": "category",
+      "path": [
+        "category",
+        "5654313976201216"
+      ]
+    },
+    "name": "UML"
+  },
+  {
+    "name": "Probabilities",
+    "category": {
+      "id": "5634472569470976",
+      "kind": "category",
+      "path": [
+        "category",
+        "5634472569470976"
+      ]
+    }
+  },
+  {
+    "name": "Pre-sales",
+    "category": {
+      "id": "5644406560391168",
+      "kind": "category",
+      "path": [
+        "category",
+        "5644406560391168"
+      ]
+    },
+    "description": "Technical expertise, comercial proposal, quotation of cost"
+  },
+  {
+    "category": {
+      "id": "5700305828184064",
+      "kind": "category",
+      "path": [
+        "category",
+        "5700305828184064"
+      ]
+    },
+    "level": 75,
+    "name": "OML",
+    "description": "Orange mobile Meta Language"
+  },
+  {
+    "category": {
+      "id": "5700305828184064",
+      "kind": "category",
+      "path": [
+        "category",
+        "5700305828184064"
+      ]
+    },
+    "name": ".NET/C#/WPF",
+    "level": 75
+  },
+  {
+    "category": {
+      "id": "5732568548769792",
+      "kind": "category",
+      "path": [
+        "category",
+        "5732568548769792"
+      ]
+    },
+    "level": 100,
+    "name": "sass, less"
+  },
+  {
+    "name": "Windows xp, Vista, 7, 8",
+    "category": {
+      "id": "5692462144159744",
+      "kind": "category",
+      "path": [
+        "category",
+        "5692462144159744"
+      ]
+    },
+    "level": 100
+  },
+  {
+    "level": 100,
+    "category": {
+      "id": "5631986051842048",
+      "kind": "category",
+      "path": [
+        "category",
+        "5631986051842048"
+      ]
+    },
+    "name": "MySQL"
+  },
+  {
+    "name": "PHP",
+    "category": {
+      "id": "5700305828184064",
+      "kind": "category",
+      "path": [
+        "category",
+        "5700305828184064"
+      ]
+    },
+    "level": 75
+  },
+  {
+    "category": {
+      "id": "5700305828184064",
+      "kind": "category",
+      "path": [
+        "category",
+        "5700305828184064"
+      ]
+    },
+    "name": "Django",
+    "level": 50
+  },
+  {
+    "level": 50,
+    "name": "Apache Tomcat",
+    "category": {
+      "id": "5730082031140864",
+      "kind": "category",
+      "path": [
+        "category",
+        "5730082031140864"
+      ]
+    }
+  },
+  {
+    "name": "Dev-C++",
+    "category": {
+      "id": "5659313586569216",
+      "kind": "category",
+      "path": [
+        "category",
+        "5659313586569216"
+      ]
+    }
+  },
+  {
+    "category": {
+      "id": "5732568548769792",
+      "kind": "category",
+      "path": [
+        "category",
+        "5732568548769792"
+      ]
+    },
+    "name": "Material Design",
+    "level": 90
+  },
+  {
+    "name": "HTML 5",
+    "category": {
+      "id": "5732568548769792",
+      "kind": "category",
+      "path": [
+        "category",
+        "5732568548769792"
+      ]
+    },
+    "level": 100
+  },
+  {
+    "category": {
+      "id": "5659313586569216",
+      "kind": "category",
+      "path": [
+        "category",
+        "5659313586569216"
+      ]
+    },
+    "name": "Eclipse"
+  },
+  {
+    "category": {
+      "id": "5659313586569216",
+      "kind": "category",
+      "path": [
+        "category",
+        "5659313586569216"
+      ]
+    },
+    "name": "Netbeans"
+  },
+  {
+    "category": {
+      "id": "5700305828184064",
+      "kind": "category",
+      "path": [
+        "category",
+        "5700305828184064"
+      ]
+    },
+    "level": 50,
+    "name": "Java/J2ee"
+  },
+  {
+    "category": {
+      "id": "5659313586569216",
+      "kind": "category",
+      "path": [
+        "category",
+        "5659313586569216"
+      ]
+    },
+    "name": "Expression Blend"
+  },
+  {
+    "category": {
+      "id": "5644406560391168",
+      "kind": "category",
+      "path": [
+        "category",
+        "5644406560391168"
+      ]
+    },
+    "name": "SCRUM Management"
+  },
+  {
+    "category": {
+      "id": "5730082031140864",
+      "kind": "category",
+      "path": [
+        "category",
+        "5730082031140864"
+      ]
+    },
+    "name": "Shell Script",
+    "level": 50
+  },
+  {
+    "name": "MS project",
+    "category": {
+      "id": "5644406560391168",
+      "kind": "category",
+      "path": [
+        "category",
+        "5644406560391168"
+      ]
+    }
+  },
+  {
+    "category": {
+      "id": "5730082031140864",
+      "kind": "category",
+      "path": [
+        "category",
+        "5730082031140864"
+      ]
+    },
+    "name": "Apache httpd",
+    "level": 70
+  },
+  {
+    "category": {
+      "id": "5634472569470976",
+      "kind": "category",
+      "path": [
+        "category",
+        "5634472569470976"
+      ]
+    },
+    "name": "Employment law"
+  },
+  {
+    "category": {
+      "id": "5692462144159744",
+      "kind": "category",
+      "path": [
+        "category",
+        "5692462144159744"
+      ]
+    },
+    "name": "Ubuntu / Debian",
+    "level": 100
+  },
+  {
+    "category": {
+      "id": "5659313586569216",
+      "kind": "category",
+      "path": [
+        "category",
+        "5659313586569216"
+      ]
+    },
+    "name": "MS Visual Studio"
+  },
+  {
+    "name": "JQuery",
+    "category": {
+      "id": "5732568548769792",
+      "kind": "category",
+      "path": [
+        "category",
+        "5732568548769792"
+      ]
+    },
+    "level": 100
+  },
+  {
+    "name": "Access",
+    "level": 75,
+    "category": {
+      "id": "5631986051842048",
+      "kind": "category",
+      "path": [
+        "category",
+        "5631986051842048"
+      ]
+    }
+  },
+  {
+    "name": "Flex",
+    "level": 25,
+    "category": {
+      "id": "5700305828184064",
+      "kind": "category",
+      "path": [
+        "category",
+        "5700305828184064"
+      ]
+    }
+  },
+  {
+    "category": {
+      "id": "5700305828184064",
+      "kind": "category",
+      "path": [
+        "category",
+        "5700305828184064"
+      ]
+    },
+    "level": 50,
+    "name": "C++"
+  },
+  {
+    "level": 75,
+    "name": "MS SQLServer",
+    "category": {
+      "id": "5631986051842048",
+      "kind": "category",
+      "path": [
+        "category",
+        "5631986051842048"
+      ]
+    }
+  },
+  {
+    "category": {
+      "id": "5732568548769792",
+      "kind": "category",
+      "path": [
+        "category",
+        "5732568548769792"
+      ]
+    },
+    "name": "JavaScript",
+    "level": 75
+  },
+  {
+    "category": {
+      "id": "5700305828184064",
+      "kind": "category",
+      "path": [
+        "category",
+        "5700305828184064"
+      ]
+    },
+    "name": "XML",
+    "level": 100
+  },
+  {
+    "name": "Vietnamese",
+    "description": "Learning...",
+    "category": {
+      "id": "5639445604728832",
+      "kind": "category",
+      "path": [
+        "category",
+        "5639445604728832"
+      ]
+    },
+    "level": 10
+  },
+  {
+    "category": {
+      "id": "5692462144159744",
+      "kind": "category",
+      "path": [
+        "category",
+        "5692462144159744"
+      ]
+    },
+    "name": "Linux other distrbs."
+  },
+  {
+    "level": 100,
+    "name": "CSS3",
+    "category": {
+      "id": "5732568548769792",
+      "kind": "category",
+      "path": [
+        "category",
+        "5732568548769792"
+      ]
+    }
+  },
+  {
+    "category": {
+      "id": "5654313976201216",
+      "kind": "category",
+      "path": [
+        "category",
+        "5654313976201216"
+      ]
+    },
+    "name": "MERISE"
+  },
+  {
+    "name": "Team motivation",
+    "category": {
+      "id": "5644406560391168",
+      "kind": "category",
+      "path": [
+        "category",
+        "5644406560391168"
+      ]
+    }
+  },
+  {
+    "name": "Marketing",
+    "category": {
+      "id": "5634472569470976",
+      "kind": "category",
+      "path": [
+        "category",
+        "5634472569470976"
+      ]
+    }
+  },
+  {
+    "name": "IntelliJ, PHPStorm",
+    "category": {
+      "id": "5659313586569216",
+      "kind": "category",
+      "path": [
+        "category",
+        "5659313586569216"
+      ]
+    },
+    "level": 90
+  },
+  {
+    "category": {
+      "id": "5634472569470976",
+      "kind": "category",
+      "path": [
+        "category",
+        "5634472569470976"
+      ]
+    },
+    "name": "Nano-science"
+  },
+  {
+    "name": "Angular",
+    "level": 80,
+    "category": {
+      "id": "5732568548769792",
+      "kind": "category",
+      "path": [
+        "category",
+        "5732568548769792"
+      ]
+    }
+  },
+  {
+    "name": "MacOS 10.x",
+    "level": 100,
+    "category": {
+      "id": "5692462144159744",
+      "kind": "category",
+      "path": [
+        "category",
+        "5692462144159744"
+      ]
+    }
+  },
+  {
+    "category": {
+      "id": "5700305828184064",
+      "kind": "category",
+      "path": [
+        "category",
+        "5700305828184064"
+      ]
+    },
+    "name": "NodeJS",
+    "description": "",
+    "level": 85
+  }
+]

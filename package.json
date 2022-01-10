@@ -17,6 +17,7 @@
     "watch": "ts-node-dev --respawn --inspect -- ./src/index.ts"
   },
   "devDependencies": {
+    "@google-cloud/datastore": "^6.6.2",
     "@types/jest": "^27.4.0",
     "@types/koa": "^2.13.4",
     "@types/koa-logger": "^3.1.2",

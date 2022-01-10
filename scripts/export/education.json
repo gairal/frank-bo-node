@@ -1,0 +1,54 @@
+[
+  {
+    "extra": "Tutored mathematics to middle school students (14 yrs) with the association EAH (EFREI's humanitarian association).",
+    "year_out": "2008-07-01T03:43:27.000Z",
+    "image": {
+      "id": "5725107787923456",
+      "kind": "image",
+      "path": [
+        "image",
+        "5725107787923456"
+      ]
+    },
+    "year_in": "2005-09-02T03:43:27.000Z",
+    "diploma": "Master in engineering specialized in Information Technology - Option software engineering",
+    "short_description": "Engineering school of IT and management",
+    "place": "Villejuif",
+    "name": "Efrei",
+    "website": "http://www.efrei.fr"
+  },
+  {
+    "place": "Paris 12th",
+    "short_description": "High school",
+    "name": "Saint-Pierre Fourier",
+    "image": {
+      "id": "5687539843203072",
+      "kind": "image",
+      "path": [
+        "image",
+        "5687539843203072"
+      ]
+    },
+    "year_in": "2000-09-02T03:37:59.000Z",
+    "diploma": "Baccalauréat S (High-school degree specialized in Science) with distinction",
+    "year_out": "2001-07-01T03:39:02.000Z",
+    "website": "http://www.spfparis12.fr"
+  },
+  {
+    "diploma": "BTS (Two-year university degree in Information Technology and Management) - Option application developer",
+    "year_out": "2005-07-01T03:41:42.000Z",
+    "image": {
+      "id": "5705241014042624",
+      "kind": "image",
+      "path": [
+        "image",
+        "5705241014042624"
+      ]
+    },
+    "short_description": "National School of Business",
+    "website": "http://www.enc-bessieres.org",
+    "place": "Paris 17th",
+    "name": "ENC",
+    "year_in": "2003-09-02T03:41:42.000Z"
+  }
+]
