@@ -12,7 +12,9 @@ export class DataSource<T = DocumentData> {
   async getAll() {
     const snapshot = await this.ref.get();
 
-    return snapshot.docs.map((doc) => doc.data());
+    // return snapshot.docs.map((doc) => doc.data());
+    // @todo: REMOVE THIS
+    return snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
   }
 
   async getById(id: string) {

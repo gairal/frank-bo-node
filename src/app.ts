@@ -2,11 +2,11 @@ import * as Koa from "koa";
 import * as logger from "koa-logger";
 import * as cors from "@koa/cors";
 
+import { educationRouter } from "./routes/education";
+import { interestRouter } from "./routes/interest";
 import { skillRouter } from "./routes/skill";
 import { travelRouter } from "./routes/travel";
 import { workRouter } from "./routes/work";
-import { educationRouter } from "./routes/education";
-import { interestRouter } from "./routes/interest";
 import { LOG_LEVEL } from "./env";
 import { errorHandler } from "./lib/errorHandler";
 
