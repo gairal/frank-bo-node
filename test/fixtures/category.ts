@@ -1,4 +1,6 @@
-export const categoryFixture = () => [
+import { FirestoreCategory } from "../../src/types/category";
+
+export const categoryFixture = (): FirestoreCategory[] => [
   {
     id: "5631986051842048",
     name: "Database",

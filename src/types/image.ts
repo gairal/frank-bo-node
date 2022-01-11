@@ -1,9 +1,8 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { DatabaseDocument } from "firestore-jest-mock/mocks/firebase";
 
-export interface FirestoreCategory extends DatabaseDocument {
+export interface FirestoreImage extends DatabaseDocument {
   name: string;
-  order: number;
 }
 
-export type Category = Pick<FirestoreCategory, "name" | "order">;
+export type Image = Pick<FirestoreImage, "name">;

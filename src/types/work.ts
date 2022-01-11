@@ -4,22 +4,29 @@ import { DatabaseDocument } from "firestore-jest-mock/mocks/firebase";
 
 import { FireStoreReference } from ".";
 
-export interface FirestoreEducation extends DatabaseDocument {
+export interface FirestoreWork extends DatabaseDocument {
+  accomplishments: string;
   dateIn: Timestamp;
   dateOut: Timestamp;
-  diploma: string;
+  description: string;
   image: FireStoreReference<"image">;
-  extra?: string;
   name: string;
+  order: number;
   place: string;
-  shortDescription: string;
+  title: string;
   website: string;
 }
 
 export interface Education
   extends Pick<
-    FirestoreEducation,
-    "diploma" | "extra" | "name" | "place" | "shortDescription" | "website"
+    FirestoreWork,
+    | "accomplishments"
+    | "description"
+    | "name"
+    | "order"
+    | "place"
+    | "title"
+    | "website"
   > {
   dateIn: string;
   dateOut: string;
