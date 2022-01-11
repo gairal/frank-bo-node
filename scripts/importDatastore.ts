@@ -17,14 +17,19 @@ const KINDS = [
 const run = async () => {
   const allRes = await Promise.all(
     KINDS.map((kind) =>
-      datastore
-        .runQuery(datastore.createQuery(kind))
-        .then(([res]) => [kind, res])
+      datastore.runQuery(datastore.createQuery(kind)).then(([entities]) => [
+        kind,
+        entities.map((entity) => ({
+          id: entity[datastore.KEY].id,
+          ...entity,
+        })),
+      ])
     )
   );
 
-  allRes.forEach(([kind, res]) => {
-    writeFileSync(`${__dirname}/import/${kind}.json`, JSON.stringify(res));
+  // export
+  allRes.forEach(([kind, entities]) => {
+    writeFileSync(`${__dirname}/import/${kind}.json`, JSON.stringify(entities));
   });
 };
 
