@@ -22,7 +22,7 @@ export const educationFixture = (): FirestoreEducation[] => [
       "Master in engineering specialized in Information Technology - Option software engineering",
     extra:
       "Tutored mathematics to middle school students (14 yrs) with the association EAH (EFREI's humanitarian association).",
-    id: "1",
+    id: "5652786310021120",
     image: {
       id: "5725107787923456",
       kind: "image",
@@ -52,7 +52,7 @@ export const educationFixture = (): FirestoreEducation[] => [
     },
     diploma:
       "BTS (Two-year university degree in Information Technology and Management) - Option application developer",
-    id: "2",
+    id: "5762637883244544",
     image: {
       id: "5705241014042624",
       kind: "image",
@@ -82,7 +82,7 @@ export const educationFixture = (): FirestoreEducation[] => [
     },
     diploma:
       "Baccalauréat S (High-school degree specialized in Science) with distinction",
-    id: "3",
+    id: "5664902681198592",
     image: {
       id: "5687539843203072",
       kind: "image",
