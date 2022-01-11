@@ -1,9 +1,11 @@
-import { Timestamp } from "@google-cloud/firestore";
+import { GeoPoint, Timestamp } from "@google-cloud/firestore";
 
 import { firestore } from "../src/lib/db";
 import { categoryFixture } from "../test/fixtures/category";
 import { educationFixture } from "../test/fixtures/education";
 import { imageFixture } from "../test/fixtures/image";
+import { travelFixture } from "../test/fixtures/travel";
+import { workFixture } from "../test/fixtures/work";
 
 export const insertCategories = async () => {
   const cats = categoryFixture();
@@ -54,8 +56,47 @@ export const insertImages = async () => {
   );
 };
 
+export const insertTravels = async () => {
+  const travels = travelFixture();
+
+  await Promise.all(
+    travels.map(({ coordinates: { latitude, longitude }, order, place }) =>
+      firestore
+        .collection("travel")
+        .doc(place.toLowerCase().replace(" ", "-"))
+        .set({ coordinates: new GeoPoint(latitude, longitude), order, place })
+    )
+  );
+};
+
+export const insertWorks = async () => {
+  const works = workFixture();
+
+  await Promise.all(
+    works.map(
+      ({
+        dateIn,
+        dateOut,
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        id,
+        image,
+        ...rest
+      }) =>
+        firestore
+          .collection("work")
+          .doc()
+          .set({
+            ...rest,
+            dateIn: Timestamp.fromDate(new Date(dateIn)),
+            ...(dateOut && { dateOut: Timestamp.fromDate(new Date(dateOut)) }),
+            image: firestore.doc(image.path.join("/")),
+          })
+    )
+  );
+};
+
 const run = async () => {
-  await insertEducations();
+  await insertTravels();
 };
 
 run()

@@ -1,6 +1,4 @@
-import { FirestoreWork } from "../../src/types/work";
-
-export const workFixture = (): FirestoreWork[] => [
+export const workFixture = () => [
   {
     accomplishments: "...",
     dateIn: "2018-01-01T23:35:18.667Z",
@@ -8,9 +6,9 @@ export const workFixture = (): FirestoreWork[] => [
       "Ekino is a digital marketing agency based in Paris. It is part of the Fullsix group.",
     id: "4874953371418624",
     image: {
-      id: "5722646637445120",
+      id: "ekino",
       kind: "image",
-      path: ["image", "5722646637445120"],
+      path: ["image", "ekino"],
     },
     name: "Ekino",
     order: 0,
@@ -27,9 +25,9 @@ export const workFixture = (): FirestoreWork[] => [
       "Régie Autonome des Transports Parisiens: French company operating Parisian public transports (Metro, Bus). I was based in the head office in Paris.",
     id: "5631383682678784",
     image: {
-      id: "5707702298738688",
+      id: "ratp",
       kind: "image",
-      path: ["image", "5707702298738688"],
+      path: ["image", "ratp"],
     },
     name: "RATP",
     order: 7,
@@ -46,9 +44,9 @@ export const workFixture = (): FirestoreWork[] => [
       "Backelite is a major player on the mobile services development market in Europe.",
     id: "5636318331666432",
     image: {
-      id: "5697423099822080",
+      id: "backelite",
       kind: "image",
-      path: ["image", "5697423099822080"],
+      path: ["image", "backelite"],
     },
     name: "Backelite",
     order: 2,
@@ -65,9 +63,9 @@ export const workFixture = (): FirestoreWork[] => [
       "ALYZAIR offers a comprehensive range of web-based flight data monitoring (FDM) services.",
     id: "5646239437684736",
     image: {
-      id: "5739407210446848",
+      id: "alyzair",
       kind: "image",
-      path: ["image", "5739407210446848"],
+      path: ["image", "alyzair"],
     },
     name: "Alyzair",
     order: 5,
@@ -84,9 +82,9 @@ export const workFixture = (): FirestoreWork[] => [
       "Backelite is a major player on the mobile services development market in Europe.",
     id: "5649050225344512",
     image: {
-      id: "5697423099822080",
+      id: "backelite",
       kind: "image",
-      path: ["image", "5697423099822080"],
+      path: ["image", "backelite"],
     },
     name: "Backelite",
     order: 0,
@@ -102,9 +100,9 @@ export const workFixture = (): FirestoreWork[] => [
     description: "Engineering school of IT and management.",
     id: "5668600916475904",
     image: {
-      id: "5725107787923456",
+      id: "efrei",
       kind: "image",
-      path: ["image", "5725107787923456"],
+      path: ["image", "efrei"],
     },
     name: "EFREI",
     order: 8,
@@ -121,9 +119,9 @@ export const workFixture = (): FirestoreWork[] => [
       "Orange (formerly France Telecom). France Telecom brand for mobile, landline and Internet businesses.",
     id: "5684666375864320",
     image: {
-      id: "5715999101812736",
+      id: "orange",
       kind: "image",
-      path: ["image", "5715999101812736"],
+      path: ["image", "orange"],
     },
     name: "Orange / France Telecom",
     order: 6,
@@ -139,9 +137,9 @@ export const workFixture = (): FirestoreWork[] => [
       "Ekino is a digital marketing agency based in Paris. It is part of the Fullsix group.",
     id: "5741031244955648",
     image: {
-      id: "5722646637445120",
+      id: "ekino",
       kind: "image",
-      path: ["image", "5722646637445120"],
+      path: ["image", "ekino"],
     },
     name: "Ekino Viet Nam",
     order: 0,
@@ -157,9 +155,9 @@ export const workFixture = (): FirestoreWork[] => [
     description: "",
     id: "5752754626625536",
     image: {
-      id: "5769015641243648",
+      id: "phonereader",
       kind: "image",
-      path: ["image", "5769015641243648"],
+      path: ["image", "phonereader"],
     },
     name: "Phonereader",
     order: 4,
@@ -175,9 +173,9 @@ export const workFixture = (): FirestoreWork[] => [
     description: "Development of mobile services, numeric ebooks edition.",
     id: "5757715179634688",
     image: {
-      id: "5769015641243648",
+      id: "phonereader",
       kind: "image",
-      path: ["image", "5769015641243648"],
+      path: ["image", "phonereader"],
     },
     name: "Phonereader",
     order: 3,
