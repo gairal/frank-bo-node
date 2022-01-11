@@ -1,6 +1,7 @@
 /coverage/
 /dist/
 /node_modules/
+/scripts/import/*.json
 
 .env
 yarn-error.log
