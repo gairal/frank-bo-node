@@ -1,23 +1,11 @@
+import { Timestamp } from "@google-cloud/firestore";
+
 import { FirestoreEducation } from "../../src/types/education";
 
 export const educationFixture = (): FirestoreEducation[] => [
   {
-    dateIn: {
-      isEqual: () => true,
-      nanoseconds: 884000000,
-      seconds: 1125673872,
-      toDate: () => new Date(),
-      toMillis: () => 0,
-      valueOf: () => "",
-    },
-    dateOut: {
-      isEqual: () => true,
-      nanoseconds: 978000000,
-      seconds: 1214925112,
-      toDate: () => new Date(),
-      toMillis: () => 0,
-      valueOf: () => "",
-    },
+    dateIn: Timestamp.fromDate(new Date("September 1, 2005")),
+    dateOut: Timestamp.fromDate(new Date("July 31, 2008")),
     diploma:
       "Master in engineering specialized in Information Technology - Option software engineering",
     extra:
@@ -34,22 +22,8 @@ export const educationFixture = (): FirestoreEducation[] => [
     website: "http://www.efrei.fr",
   },
   {
-    dateIn: {
-      isEqual: () => true,
-      nanoseconds: 884000000,
-      seconds: 1062515472,
-      toDate: () => new Date(),
-      toMillis: () => 0,
-      valueOf: () => "",
-    },
-    dateOut: {
-      isEqual: () => true,
-      nanoseconds: 978000000,
-      seconds: 1120230712,
-      toDate: () => new Date(),
-      toMillis: () => 0,
-      valueOf: () => "",
-    },
+    dateIn: Timestamp.fromDate(new Date("September 1, 2003")),
+    dateOut: Timestamp.fromDate(new Date("July 31, 2005")),
     diploma:
       "BTS (Two-year university degree in Information Technology and Management) - Option application developer",
     id: "5762637883244544",
@@ -64,22 +38,8 @@ export const educationFixture = (): FirestoreEducation[] => [
     website: "http://www.enc-bessieres.org",
   },
   {
-    dateIn: {
-      isEqual: () => true,
-      nanoseconds: 884000000,
-      seconds: 967907472,
-      toDate: () => new Date(),
-      toMillis: () => 0,
-      valueOf: () => "",
-    },
-    dateOut: {
-      isEqual: () => true,
-      nanoseconds: 978000000,
-      seconds: 994000312,
-      toDate: () => new Date(),
-      toMillis: () => 0,
-      valueOf: () => "",
-    },
+    dateIn: Timestamp.fromDate(new Date("September 1, 2000")),
+    dateOut: Timestamp.fromDate(new Date("July 31, 2001")),
     diploma:
       "Baccalauréat S (High-school degree specialized in Science) with distinction",
     id: "5664902681198592",
