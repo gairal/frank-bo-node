@@ -32,6 +32,16 @@
       "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/tsnd",
       "skipFiles": ["<node_internals>/**"],
       "type": "pwa-node"
+    },
+    {
+      "args": ["${workspaceFolder}/scripts/exportFirestore.ts"],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "name": "export-firestore",
+      "request": "launch",
+      "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/tsnd",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "pwa-node"
     }
   ]
 }
