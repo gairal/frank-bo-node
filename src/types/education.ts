@@ -21,7 +21,7 @@ export interface Education
     FirestoreEducation,
     "diploma" | "extra" | "name" | "place" | "shortDescription" | "website"
   > {
-  dateIn: string;
-  dateOut: string;
+  dateIn: Date;
+  dateOut: Date;
   image: string;
 }

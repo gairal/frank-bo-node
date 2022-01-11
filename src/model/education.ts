@@ -8,9 +8,10 @@ const normalize = ({
   dateOut,
   ...rest
 }: FirestoreEducation): Education => ({
+  ...rest,
   dateIn: dateIn.toDate(),
   dateOut: dateOut.toDate(),
-  ...rest,
+  image: "",
 });
 
 export const getAll = () =>

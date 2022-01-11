@@ -28,7 +28,7 @@ export interface Education
     | "title"
     | "website"
   > {
-  dateIn: string;
-  dateOut: string;
+  dateIn: Date;
+  dateOut: Date;
   image: string;
 }
