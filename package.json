@@ -10,7 +10,7 @@
     "deploy": "gcloud app deploy --project com-gairal-frank-22",
     "dev": "tsnd --respawn --inspect -- ./src/index.ts",
     "gcp-build": "npm run build",
-    "lint": "eslint . --ext .js,.ts",
+    "lint": "eslint . --ext .js,.ts --quiet",
     "prepare": "husky install",
     "start": "node dist",
     "test": "LOG_LEVEL=error jest",
