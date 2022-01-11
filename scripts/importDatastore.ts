@@ -24,7 +24,7 @@ const run = async () => {
   );
 
   allRes.forEach(([kind, res]) => {
-    writeFileSync(`${__dirname}/export/${kind}.json`, JSON.stringify(res));
+    writeFileSync(`${__dirname}/import/${kind}.json`, JSON.stringify(res));
   });
 };
 
