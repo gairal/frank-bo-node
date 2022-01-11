@@ -22,17 +22,10 @@ app.use(errorHandler);
 app.use(
   cors({
     allowMethods: ["GET"],
-    origin: (ctx) => {
-      if (
-        ["gairal.com", "gairal.rocks"].some((domain) =>
-          ctx.hostname.includes(domain)
-        )
-      ) {
-        return "*";
-      }
-
-      return "http://localhost:3000";
-    },
+    origin: (ctx) =>
+      ctx.header.origin?.includes("gairal.")
+        ? ctx.header.origin
+        : "http://localhost:3000",
   })
 );
 

@@ -8,13 +8,13 @@
   "scripts": {
     "build": "tsc -p .",
     "deploy": "gcloud app deploy --project com-gairal-frank-22",
+    "dev": "ts-node-dev --respawn --inspect -- ./src/index.ts",
     "gcp-build": "npm run build",
     "lint": "eslint . --ext .js,.ts",
     "prepare": "husky install",
     "start": "node dist",
     "test": "LOG_LEVEL=error jest",
-    "test-cov": "yarn test --collectCoverage",
-    "watch": "ts-node-dev --respawn --inspect -- ./src/index.ts"
+    "test-cov": "yarn test --collectCoverage"
   },
   "devDependencies": {
     "@google-cloud/datastore": "^6.6.2",
@@ -29,6 +29,7 @@
     "eslint-config-airbnb-typescript-prettier": "^5.0.0",
     "eslint-plugin-jest": "^25.3.4",
     "eslint-plugin-no-only-tests": "^2.6.0",
+    "eslint-plugin-sort-keys-fix": "^1.1.2",
     "eslint-plugin-testing-library": "^5.0.1",
     "eslint-plugin-typescript-sort-keys": "^2.1.0",
     "firestore-jest-mock": "^0.17.0",
