@@ -8,4 +8,6 @@ export interface FirestoreTravel extends DatabaseDocument {
   place: string;
 }
 
-export type Travel = Pick<FirestoreTravel, "coordinates" | "order" | "place">;
+export interface Travel extends Pick<FirestoreTravel, "order" | "place"> {
+  coordinates: { latitude: number; longitude: number };
+}
