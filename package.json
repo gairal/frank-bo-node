@@ -8,13 +8,13 @@
   "scripts": {
     "build": "tsc -p .",
     "deploy": "gcloud app deploy --project com-gairal-frank-22",
+    "dev": "ts-node-dev --respawn --inspect -- ./src/index.ts",
     "gcp-build": "npm run build",
     "lint": "eslint . --ext .js,.ts",
     "prepare": "husky install",
     "start": "node dist",
     "test": "LOG_LEVEL=error jest",
-    "test-cov": "yarn test --collectCoverage",
-    "watch": "ts-node-dev --respawn --inspect -- ./src/index.ts"
+    "test-cov": "yarn test --collectCoverage"
   },
   "devDependencies": {
     "@types/jest": "^27.4.0",

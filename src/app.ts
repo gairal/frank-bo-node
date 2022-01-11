@@ -25,7 +25,7 @@ app.use(
     origin: (ctx) => {
       if (
         ["gairal.com", "gairal.rocks"].some((domain) =>
-          ctx.hostname.includes(domain)
+          ctx.origin.includes(domain)
         )
       ) {
         return "*";
