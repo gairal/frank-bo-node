@@ -1,10 +1,14 @@
 module.exports = {
   collectCoverageFrom: ["<rootDir>/src/**/*.ts"],
   coverageDirectory: "coverage",
-  coveragePathIgnorePatterns: ["<rootDir>/built/", "<rootDir>/node_modules/"],
+  coveragePathIgnorePatterns: [
+    "<rootDir>/built/",
+    "<rootDir>/node_modules/",
+    "<rootDir>/src/app.ts",
+  ],
   coverageReporters: ["html", "text", "text-summary"],
   coverageThreshold: {
-    global: { branches: 80, functions: 100, lines: 100, statements: 100 },
+    global: { branches: 50, functions: 90, lines: 90, statements: 90 },
   },
   moduleFileExtensions: ["js", "ts", "json"],
   testEnvironment: "node",
