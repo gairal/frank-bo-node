@@ -1,10 +1,11 @@
+import { DocumentReference } from "@google-cloud/firestore";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { DatabaseDocument } from "firestore-jest-mock/mocks/firebase";
 
-import { FireStoreReference } from ".";
+import { FirestoreCategory } from "./category";
 
 export interface FirestoreSkill extends DatabaseDocument {
-  category: FireStoreReference<"category">;
+  category: DocumentReference<FirestoreCategory>;
   name: string;
 }
 
