@@ -10,7 +10,6 @@
     "deploy": "gcloud app deploy --project com-gairal-frank-22",
     "dev": "tsnd --respawn --inspect -- ./src/index.ts",
     "gcp-build": "npm run build",
-    "import-datastore": "GOOGLE_APPLICATION_CREDENTIALS=$HOME/com-gairal-frank-OLD.json npx tsnd ./scripts/importDatastore",
     "lint": "eslint . --ext .js,.ts",
     "prepare": "husky install",
     "start": "node dist",
