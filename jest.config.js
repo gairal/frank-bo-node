@@ -11,6 +11,7 @@ module.exports = {
     global: { branches: 50, functions: 90, lines: 90, statements: 90 },
   },
   moduleFileExtensions: ["js", "ts", "json"],
+  setupFilesAfterEnv: ["<rootDir>/test/setupFilesAfterEnv.ts"],
   testEnvironment: "node",
   testPathIgnorePatterns: ["<rootDir>/dist/", "<rootDir>/node_modules/"],
   testRegex: "/__tests__/.*\\.test\\.ts$",
