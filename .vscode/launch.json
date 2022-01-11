@@ -19,6 +19,19 @@
       "request": "launch",
       "smartStep": true,
       "type": "node"
+    },
+    {
+      "args": ["${workspaceFolder}/scripts/importDatastore.ts"],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "/home/dro/com-gairal-frank-OLD.json"
+      },
+      "name": "import-datastore",
+      "request": "launch",
+      "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/tsnd",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "pwa-node"
     }
   ]
 }
