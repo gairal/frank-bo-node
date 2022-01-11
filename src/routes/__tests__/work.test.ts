@@ -5,12 +5,12 @@ import { app } from "../../app";
 
 mockDb();
 
-const subject = async () => request(app.callback()).get("/travels");
+const subject = async () => request(app.callback()).get("/works");
 
-describe("travel", () => {
-  test("returns travel content", async () => {
+describe("work", () => {
+  test("returns work content", async () => {
     const { body, status } = await subject();
     expect(status).toBe(200);
-    expect(body).toHaveLength(59);
+    expect(body).toHaveLength(10);
   });
 });
