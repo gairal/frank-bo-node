@@ -2,7 +2,7 @@
 import { DatabaseDocument } from "firestore-jest-mock/mocks/firebase";
 
 export interface FirestoreImage extends DatabaseDocument {
-  name: string;
+  file: string;
 }
 
-export type Image = Pick<FirestoreImage, "name">;
+export type Image = Pick<FirestoreImage, "file">;
