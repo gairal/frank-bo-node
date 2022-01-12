@@ -16,8 +16,8 @@ describe("/travels", () => {
     expect(body[0]).toMatchInlineSnapshot(`
       Object {
         "coordinates": Object {
-          "latitude": 52.3702,
-          "longitude": 4.89517,
+          "_latitude": 52.3702,
+          "_longitude": 4.89517,
         },
         "order": 5,
         "place": "Amsterdam",
