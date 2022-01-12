@@ -16,11 +16,10 @@ describe("/travels", () => {
     expect(body[0]).toMatchInlineSnapshot(`
       Object {
         "coordinates": Object {
-          "_latitude": 52.3702,
-          "_longitude": 4.89517,
+          "latitude": 48.8566,
+          "longitude": 2.35222,
         },
-        "order": 5,
-        "place": "Amsterdam",
+        "place": "Paris",
       }
     `);
   });

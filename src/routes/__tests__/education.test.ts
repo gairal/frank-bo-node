@@ -15,14 +15,8 @@ describe("/education", () => {
 
     expect(body[0]).toMatchInlineSnapshot(`
       Object {
-        "dateIn": Object {
-          "_nanoseconds": 0,
-          "_seconds": 1125532800,
-        },
-        "dateOut": Object {
-          "_nanoseconds": 0,
-          "_seconds": 1217462400,
-        },
+        "dateIn": "2005-08-31T22:00:00.000Z",
+        "dateOut": "2008-07-01T15:11:52.978Z",
         "diploma": "Master in engineering specialized in Information Technology - Option software engineering",
         "extra": "Tutored mathematics to middle school students (14 yrs) with the association EAH (EFREI's humanitarian association).",
         "image": "efrei.png",
