@@ -1,5 +1,5 @@
 import * as request from "supertest";
-import { mockCollection } from "firestore-jest-mock/mocks/firestore";
+import { mockGet } from "firestore-jest-mock/mocks/firestore";
 
 import { mockDb } from "../../test/fixtures";
 import { app } from "../app";
@@ -16,9 +16,11 @@ describe("error", () => {
   });
 
   test.skip("returns a 500 on error", async () => {
+    mockGet.mockRejectedValueOnce("NETWORK_ERROR");
+
     const { body, status } = await subject("/educations");
     expect(status).toBe(200);
     expect(body).toHaveLength(3);
-    expect(mockCollection).toHaveBeenCalledTimes(1);
+    expect(mockGet).toHaveBeenCalledTimes(1);
   });
 });

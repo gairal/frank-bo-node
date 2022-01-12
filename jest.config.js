@@ -7,9 +7,6 @@ module.exports = {
     "<rootDir>/src/app.ts",
   ],
   coverageReporters: ["html", "text", "text-summary"],
-  coverageThreshold: {
-    global: { branches: 50, functions: 90, lines: 90, statements: 90 },
-  },
   moduleFileExtensions: ["js", "ts", "json"],
   setupFilesAfterEnv: ["<rootDir>/test/setupAfterEnv.ts"],
   testPathIgnorePatterns: ["<rootDir>/dist/", "<rootDir>/node_modules/"],
