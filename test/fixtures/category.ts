@@ -2,67 +2,67 @@ import { FirestoreCategory } from "../../src/types/category";
 
 export const categoryFixture = (): FirestoreCategory[] => [
   {
-    id: "5631986051842048",
+    id: "database",
     name: "Database",
     order: 5,
   },
   {
-    id: "5634472569470976",
+    id: "miscellaneous",
     name: "Miscellaneous",
     order: 11,
   },
   {
-    id: "5639445604728832",
+    id: "languages",
     name: "languages",
     order: 10,
   },
   {
-    id: "5644406560391168",
+    id: "project-management",
     name: "Project Management",
     order: 8,
   },
   {
-    id: "5654313976201216",
+    id: "modelling",
     name: "Modelling",
     order: 7,
   },
   {
-    id: "5659313586569216",
+    id: "ide",
     name: "IDE",
     order: 9,
   },
   {
-    id: "5664248772427776",
+    id: "sports",
     name: "Sports",
     order: 4,
   },
   {
-    id: "5672749318012928",
+    id: "source-control",
     name: "Source Control",
     order: 4,
   },
   {
-    id: "5692462144159744",
+    id: "operating-systems",
     name: "Operating Systems",
     order: 6,
   },
   {
-    id: "5700305828184064",
+    id: "back-end-development",
     name: "Back-end development",
     order: 2,
   },
   {
-    id: "5720147234914304",
+    id: "travel",
     name: "Travel",
     order: 3,
   },
   {
-    id: "5730082031140864",
+    id: "server-administration",
     name: "Server administration",
     order: 3,
   },
   {
-    id: "5732568548769792",
+    id: "front-end-development",
     name: "Front-end development",
     order: 1,
   },

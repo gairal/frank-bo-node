@@ -1,206 +1,106 @@
-import { FirestoreInterest } from "../../src/types/interest";
+// import { FirestoreInterest } from "../../src/types/interest";
 
-export const interestFixture = (): FirestoreInterest[] => [
+export const interestFixture = (): any[] => [
   {
-    category: {
-      id: "5720147234914304",
-      kind: "category",
-      path: ["category", "5720147234914304"],
-    },
-    id: "5642554087309312",
+    category: "travel",
     name: "United States",
     order: 8,
   },
   {
-    category: {
-      id: "5634472569470976",
-      kind: "category",
-      path: ["category", "5634472569470976"],
-    },
+    category: "miscellaneous",
     description: "SF, Fantasy, Manga/Comics",
-    id: "5651124426113024",
     name: "Reading",
     order: 15,
   },
   {
-    category: {
-      id: "5664248772427776",
-      kind: "category",
-      path: ["category", "5664248772427776"],
-    },
-    id: "5655869022797824",
+    category: "sports",
     name: "Trekking",
     order: 12,
   },
   {
-    category: {
-      id: "5720147234914304",
-      kind: "category",
-      path: ["category", "5720147234914304"],
-    },
-    id: "5656058538229760",
+    category: "travel",
     name: "Ecuador",
     order: 2,
   },
   {
-    category: {
-      id: "5664248772427776",
-      kind: "category",
-      path: ["category", "5664248772427776"],
-    },
+    category: "sports",
     description: "advanced PADI diver",
-    id: "5667908084563968",
     name: "Scuba Diving",
     order: 10,
   },
   {
-    category: {
-      id: "5720147234914304",
-      kind: "category",
-      path: ["category", "5720147234914304"],
-    },
-    id: "5669544198668288",
+    category: "travel",
     name: "Myanmar (Burma)",
     order: 4,
   },
   {
-    category: {
-      id: "5634472569470976",
-      kind: "category",
-      path: ["category", "5634472569470976"],
-    },
-    id: "5688424874901504",
+    category: "miscellaneous",
     name: "Photography",
     order: 18,
   },
   {
-    category: {
-      id: "5634472569470976",
-      kind: "category",
-      path: ["category", "5634472569470976"],
-    },
-    id: "5695159920492544",
+    category: "miscellaneous",
     name: "Cooking",
     order: 19,
   },
   {
-    category: {
-      id: "5720147234914304",
-      kind: "category",
-      path: ["category", "5720147234914304"],
-    },
-    id: "5702666986455040",
+    category: "travel",
     name: "Thailand",
     order: 3,
   },
   {
-    category: {
-      id: "5720147234914304",
-      kind: "category",
-      path: ["category", "5720147234914304"],
-    },
-    id: "5706803308396544",
+    category: "travel",
     name: "Brazil",
     order: 5,
   },
   {
-    category: {
-      id: "5720147234914304",
-      kind: "category",
-      path: ["category", "5720147234914304"],
-    },
-    id: "5710239819104256",
+    category: "travel",
     name: "6 months travel around Southeast Asia",
     order: 0,
   },
   {
-    category: {
-      id: "5664248772427776",
-      kind: "category",
-      path: ["category", "5664248772427776"],
-    },
-    id: "5714163003293696",
+    category: "sports",
     name: "Tennis",
     order: 14,
   },
   {
-    category: {
-      id: "5720147234914304",
-      kind: "category",
-      path: ["category", "5720147234914304"],
-    },
-    id: "5719238044024832",
+    category: "travel",
     name: "Spain",
     order: 6,
   },
   {
-    category: {
-      id: "5634472569470976",
-      kind: "category",
-      path: ["category", "5634472569470976"],
-    },
-    id: "5720929187397632",
+    category: "miscellaneous",
     name: "Animation",
     order: 17,
   },
   {
-    category: {
-      id: "5720147234914304",
-      kind: "category",
-      path: ["category", "5720147234914304"],
-    },
-    id: "5724160613416960",
+    category: "travel",
     name: "And many more...",
     order: 9,
   },
   {
-    category: {
-      id: "5634472569470976",
-      kind: "category",
-      path: ["category", "5634472569470976"],
-    },
+    category: "miscellaneous",
     description: "Favorite directors: Stanley Kubrick's & Terry Gilliam's",
-    id: "5734055144325120",
     name: "Cinema",
     order: 16,
   },
   {
-    category: {
-      id: "5664248772427776",
-      kind: "category",
-      path: ["category", "5664248772427776"],
-    },
-    id: "5735995932672000",
+    category: "sports",
     name: "Mountain & road bicycling",
     order: 11,
   },
   {
-    category: {
-      id: "5664248772427776",
-      kind: "category",
-      path: ["category", "5664248772427776"],
-    },
-    id: "5742796208078848",
+    category: "sports",
     name: "Roller skating",
     order: 13,
   },
   {
-    category: {
-      id: "5720147234914304",
-      kind: "category",
-      path: ["category", "5720147234914304"],
-    },
-    id: "5749328048029696",
+    category: "travel",
     name: "Iceland",
     order: 1,
   },
   {
-    category: {
-      id: "5720147234914304",
-      kind: "category",
-      path: ["category", "5720147234914304"],
-    },
-    id: "5760820306771968",
+    category: "travel",
     name: "China",
     order: 7,
   },
