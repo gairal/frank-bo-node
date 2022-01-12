@@ -4,10 +4,10 @@ import { firestore } from "../lib/db";
 import { Category, FirestoreCategory } from "../types/category";
 
 const collection = firestore.collection("category").withConverter<Category>({
-  fromFirestore: (snapshot: QueryDocumentSnapshot<FirestoreCategory>) => {
-    const { order, ...rest } = snapshot.data();
-    return rest;
-  },
+  fromFirestore: (snapshot: QueryDocumentSnapshot<FirestoreCategory>) => ({
+    ...snapshot.data(),
+    id: snapshot.id,
+  }),
   toFirestore: () => ({}),
 });
 
