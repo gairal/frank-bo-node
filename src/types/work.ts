@@ -22,7 +22,6 @@ export interface Work
     | "description"
     | "image"
     | "name"
-    | "order"
     | "place"
     | "title"
     | "website"

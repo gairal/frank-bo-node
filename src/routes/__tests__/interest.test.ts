@@ -7,7 +7,7 @@ mockDb();
 
 const subject = async () => request(app.callback()).get("/interests");
 
-describe("interest", () => {
+describe("/interests", () => {
   test("returns interest content", async () => {
     const { body, status } = await subject();
     expect(status).toBe(200);
