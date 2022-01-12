@@ -1,6 +1,6 @@
 import * as Router from "koa-router";
 
-import { getAll } from "../model/interest";
+import { getAll, getAllByCategory } from "../model/interest";
 
 export const interestRouter = new Router({ prefix: "/interests" });
 

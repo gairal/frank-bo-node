@@ -1,6 +1,8 @@
-// import { FirestoreInterest } from "../../src/types/interest";
+import { FirestoreInterest } from "../../src/types/interest";
 
-export const interestFixture = (): any[] => [
+export const interestFixture = (): (Omit<FirestoreInterest, "category"> & {
+  category: string;
+})[] => [
   {
     category: "travel",
     name: "United States",
