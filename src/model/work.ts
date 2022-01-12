@@ -1,7 +1,22 @@
-import { DataSource } from "./DataSource";
+import { QueryDocumentSnapshot } from "@google-cloud/firestore";
 
-const workModel = new DataSource("work");
+import { firestore } from "../lib/db";
+import { FirestoreWork, Work } from "../types/work";
 
-export const getAll = () => workModel.getAll();
-export const getById = (id: string) => workModel.getById(id);
-export const getSkillsFromId = (id: string) => workModel.getById(id);
+const collection = firestore.collection("work").withConverter<Work>({
+  fromFirestore: (snapshot: QueryDocumentSnapshot<FirestoreWork>) => {
+    const { dateIn, dateOut, order, ...rest } = snapshot.data();
+    return {
+      ...rest,
+      dateIn: dateIn.toDate(),
+      ...(dateOut && { dateOut: dateOut.toDate() }),
+    };
+  },
+  toFirestore: () => ({}),
+});
+
+export const getAll = () =>
+  collection
+    .orderBy("dateIn", "desc")
+    .get()
+    .then(({ docs }) => docs.map((doc) => doc.data()));

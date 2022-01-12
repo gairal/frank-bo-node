@@ -1,20 +1,18 @@
+import { QueryDocumentSnapshot } from "@google-cloud/firestore";
+
 import { Education, FirestoreEducation } from "../types/education";
-import { DataSource } from "./DataSource";
+import { firestore } from "../lib/db";
 
-const educationModel = new DataSource<FirestoreEducation>("education");
-
-const normalize = ({
-  dateIn,
-  dateOut,
-  ...rest
-}: FirestoreEducation): Education => ({
-  ...rest,
-  dateIn: dateIn.toDate(),
-  dateOut: dateOut.toDate(),
-  image: "",
+const collection = firestore.collection("education").withConverter<Education>({
+  fromFirestore: (snapshot: QueryDocumentSnapshot<FirestoreEducation>) => {
+    const { dateIn, dateOut, ...rest } = snapshot.data();
+    return { ...rest, dateIn: dateIn.toDate(), dateOut: dateOut.toDate() };
+  },
+  toFirestore: () => ({}),
 });
 
 export const getAll = () =>
-  educationModel.getAll().then((eds) => eds.map(normalize));
-export const getById = (id: string) =>
-  educationModel.getById(id).then((edu) => (edu ? normalize(edu) : edu));
+  collection
+    .orderBy("dateIn", "desc")
+    .get()
+    .then(({ docs }) => docs.map((doc) => doc.data()));

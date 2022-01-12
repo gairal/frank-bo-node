@@ -2,13 +2,11 @@ import { Timestamp } from "@google-cloud/firestore";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { DatabaseDocument } from "firestore-jest-mock/mocks/firebase";
 
-import { FireStoreReference } from ".";
-
 export interface FirestoreEducation extends DatabaseDocument {
   dateIn: Timestamp;
   dateOut: Timestamp;
   diploma: string;
-  image: FireStoreReference<"image">;
+  image: string;
   extra?: string;
   name: string;
   place: string;
@@ -19,9 +17,14 @@ export interface FirestoreEducation extends DatabaseDocument {
 export interface Education
   extends Pick<
     FirestoreEducation,
-    "diploma" | "extra" | "name" | "place" | "shortDescription" | "website"
+    | "diploma"
+    | "extra"
+    | "image"
+    | "name"
+    | "place"
+    | "shortDescription"
+    | "website"
   > {
   dateIn: Date;
   dateOut: Date;
-  image: string;
 }
