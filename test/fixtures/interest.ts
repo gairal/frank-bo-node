@@ -1,9 +1,10 @@
-import { firestore } from "../../src/lib/db";
+import { Firestore } from "@google-cloud/firestore";
+
 import { FirestoreCategory } from "../../src/types/category";
 import { FirestoreInterest } from "../../src/types/interest";
 
 const getRef = (category: string) =>
-  firestore.doc(
+  new Firestore().doc(
     `/category/${category}`
   ) as FirebaseFirestore.DocumentReference<FirestoreCategory>;
 
