@@ -1,4 +1,4 @@
-# frank.gairal.com API
+# frank.gairal.com API ![workflow](https://github.com/gairal/frank-bo-node/actions/workflows/ci.yml/badge.svg)
 
 ## todo
 
