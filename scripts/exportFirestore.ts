@@ -82,11 +82,7 @@ export const insertWorks = async () => {
   );
 };
 
-const run = async () => {
-  await insertInterests();
-};
-
-run()
+insertInterests()
   .then(() => {
     console.info("DONE");
   })
