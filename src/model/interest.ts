@@ -13,16 +13,21 @@ const collection = firestore.collection("interest").withConverter<Interest>({
   toFirestore: () => ({}),
 });
 
-export const getAll = async () => {
-  const [categories, interestSnapshot] = await Promise.all([
-    getAllCategories(),
-    collection.get(),
-  ]);
-
-  const categoryMap = categories.reduce<Record<string, Omit<Category, "id">>>(
-    (cats, { id, label, order }) => ({ ...cats, [id]: { label, order } }),
-    {}
+const getCategoryMap = () =>
+  getAllCategories().then((categories) =>
+    categories.reduce<Record<string, Omit<Category, "id">>>(
+      (cats, { id, label, order }) => ({ ...cats, [id]: { label, order } }),
+      {}
+    )
   );
+
+const getAllInterests = () => collection.orderBy("order").get();
+
+export const getAll = async () => {
+  const [categoryMap, interestSnapshot] = await Promise.all([
+    getCategoryMap(),
+    getAllInterests(),
+  ]);
 
   return interestSnapshot.docs.map((doc) => {
     const data = doc.data();
@@ -30,4 +35,30 @@ export const getAll = async () => {
   });
 };
 
-export const getAllByCategory = () => [];
+export const getAllByCategory = async () => {
+  const [categoryMap, interestSnapshot] = await Promise.all([
+    getCategoryMap(),
+    getAllInterests(),
+  ]);
+
+  const categoriesWithInterest = interestSnapshot.docs.reduce<
+    Record<
+      string,
+      Omit<Category, "id"> & { interests?: Omit<Interest, "category">[] }
+    >
+  >((cats, doc) => {
+    const { category, ...rest } = doc.data();
+
+    const cat = cats[category] ?? categoryMap[category];
+    if (!cat) {
+      return cats;
+    }
+
+    return {
+      ...cats,
+      [category]: { ...cat, interests: (cat.interests ?? []).concat(rest) },
+    };
+  }, {});
+
+  return Object.values(categoriesWithInterest);
+};
