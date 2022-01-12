@@ -3,7 +3,7 @@ import { GeoPoint, Timestamp } from "@google-cloud/firestore";
 import { firestore } from "../src/lib/db";
 import { categoryFixture } from "../test/fixtures/category";
 import { educationFixture } from "../test/fixtures/education";
-import { imageFixture } from "../test/fixtures/image";
+import { interestFixture } from "../test/fixtures/interest";
 import { travelFixture } from "../test/fixtures/travel";
 import { workFixture } from "../test/fixtures/work";
 
@@ -24,34 +24,16 @@ export const insertEducations = async () => {
   const edus = educationFixture();
 
   await Promise.all(
-    edus.map(
-      ({
-        dateIn,
-        dateOut,
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        id,
-        image,
-        ...rest
-      }) =>
-        firestore
-          .collection("education")
-          .doc(image.id)
-          .set({
-            ...rest,
-            dateIn: new Timestamp(dateIn.seconds, dateIn.nanoseconds),
-            dateOut: new Timestamp(dateOut.seconds, dateOut.nanoseconds),
-            image: firestore.doc(image.path.join("/")),
-          })
-    )
-  );
-};
-
-export const insertImages = async () => {
-  const imgs = imageFixture();
-
-  await Promise.all(
-    imgs.map(({ file }) =>
-      firestore.collection("image").doc(file.split(".")[0]).set({ file })
+    edus.map(({ dateIn, dateOut, id, image, ...rest }) =>
+      firestore
+        .collection("education")
+        .doc(image)
+        .set({
+          ...rest,
+          dateIn: new Timestamp(dateIn.seconds, dateIn.nanoseconds),
+          dateOut: new Timestamp(dateOut.seconds, dateOut.nanoseconds),
+          image: firestore.doc(`/image/${image}`),
+        })
     )
   );
 };
@@ -69,34 +51,39 @@ export const insertTravels = async () => {
   );
 };
 
+export const insertInterests = async () => {
+  const interests = interestFixture();
+
+  await Promise.all(
+    interests.map(({ category, id, ...rest }) =>
+      firestore
+        .collection("interest")
+        .doc()
+        .set({ ...rest, category: firestore.doc(`/category/${category}`) })
+    )
+  );
+};
+
 export const insertWorks = async () => {
   const works = workFixture();
 
   await Promise.all(
-    works.map(
-      ({
-        dateIn,
-        dateOut,
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        id,
-        image,
-        ...rest
-      }) =>
-        firestore
-          .collection("work")
-          .doc()
-          .set({
-            ...rest,
-            dateIn: Timestamp.fromDate(new Date(dateIn)),
-            ...(dateOut && { dateOut: Timestamp.fromDate(new Date(dateOut)) }),
-            image: firestore.doc(image.path.join("/")),
-          })
+    works.map(({ dateIn, dateOut, id, image, ...rest }) =>
+      firestore
+        .collection("work")
+        .doc()
+        .set({
+          ...rest,
+          dateIn,
+          ...(dateOut && { dateOut }),
+          image: firestore.doc(`/image/${image}`),
+        })
     )
   );
 };
 
 const run = async () => {
-  await insertTravels();
+  await insertInterests();
 };
 
 run()
