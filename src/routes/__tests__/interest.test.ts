@@ -2,8 +2,7 @@ import * as request from "supertest";
 
 import { app } from "../../app";
 
-const subject = async (path = "") =>
-  request(app.callback()).get(`/interests${path}`);
+const subject = async () => request(app.callback()).get("/interests");
 
 /**
  * converters are not supported by firestore-jest-mock

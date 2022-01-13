@@ -1,370 +1,163 @@
-export const skillFixture = (): any[] => [
-  {
-    category: "front-end",
-    description: "",
-    level: 100,
-    name: "Functional CSS",
-  },
-  {
-    category: "front-end",
-    description: "",
-    level: 80,
-    name: "ReactJS/Redux",
-  },
-  {
-    category: "front-end",
-    description: "",
-    level: 100,
-    name: "BEM",
-  },
-  {
-    category: "front-end",
-    description: "",
-    level: 100,
-    name: "Webpack",
-  },
-  {
-    category: "front-end",
-    description: "",
-    level: 70,
-    name: "VueJS",
-  },
-  {
-    category: "back-end",
-    description: "",
-    level: 20,
-    name: "GoLang",
-  },
-  {
-    category: "database",
-    level: 75,
-    name: "SQL",
-  },
-  {
-    category: "back-end",
-    level: 50,
-    name: "C#/Windows Phone",
-  },
-  {
-    category: "languages",
-    description: "native language",
-    level: 100,
-    name: "French",
-  },
-  {
-    category: "back-end",
-    level: 25,
-    name: "Java/Android API",
-  },
-  {
-    category: "back-end",
-    level: 50,
-    name: "Python",
-  },
-  {
-    category: "project-management",
-    description:
-      "Post-conception cost quantification, Optimization of cost and time",
-    name: "Planning & cost",
-  },
-  {
-    category: "operating-systems",
-    level: 80,
-    name: "CentOS",
-  },
-  {
-    category: "source-control",
-    level: 80,
-    name: "GIT, Gitlab",
-  },
-  {
-    category: "database",
-    level: 75,
-    name: "Oracle",
-  },
-  {
-    category: "back-end",
-    level: 40,
-    name: "Spring Framework",
-  },
-  {
-    category: "source-control",
-    level: 80,
-    name: "SVN",
-  },
-  {
-    category: "front-end",
-    level: 90,
-    name: "Grunt, Gulp",
-  },
-  {
-    category: "languages",
-    description: "fluent - TOEIC: 820pts",
-    level: 75,
-    name: "English",
-  },
-  {
-    category: "miscellaneous",
-    name: "Electronics",
-  },
-  {
-    category: "modelling",
-    name: "MERISE2",
-  },
-  {
-    category: "project-management",
-    name: "Technical specifications",
-  },
-  {
-    category: "front-end",
-    level: 80,
-    name: "Foundation",
-  },
-  {
-    category: "miscellaneous",
-    name: "Economics",
-  },
-  {
-    category: "front-end",
-    level: 75,
-    name: "Bootstrap 3 & 4",
-  },
-  {
-    category: "back-end",
-    level: 75,
-    name: "XSLT",
-  },
-  {
-    category: "back-end",
-    level: 50,
-    name: "C/GTK+",
-  },
-  {
-    category: "back-end",
-    level: 75,
-    name: "Visual Basic",
-  },
-  {
-    category: "miscellaneous",
-    name: "Quality control",
-  },
-  {
-    category: "back-end",
-    description: "SFR mobile Meta Language",
-    level: 75,
-    name: "PML",
-  },
-  {
-    category: "back-end",
-    level: 75,
-    name: "VBA Excel & Access",
-  },
-  {
-    category: "project-management",
-    description: "Brainstorming, storyboard, managing graphic design, ...",
-    name: "Conception",
-  },
-  {
-    category: "modelling",
-    name: "UML",
-  },
-  {
-    category: "miscellaneous",
-    name: "Probabilities",
-  },
-  {
-    category: "project-management",
-    description: "Technical expertise, commercial proposal, quotation of cost",
-    name: "Pre-sales",
-  },
-  {
-    category: "back-end",
-    description: "Orange mobile Meta Language",
-    level: 75,
-    name: "OML",
-  },
-  {
-    category: "back-end",
-    level: 75,
-    name: ".NET/C#/WPF",
-  },
-  {
-    category: "front-end",
-    level: 100,
-    name: "sass, less",
-  },
-  {
-    category: "operating-systems",
-    level: 100,
-    name: "Windows xp, Vista, 7, 8",
-  },
-  {
-    category: "database",
-    level: 100,
-    name: "MySQL",
-  },
-  {
-    category: "back-end",
-    level: 75,
-    name: "PHP",
-  },
-  {
-    category: "back-end",
-    level: 50,
-    name: "Django",
-  },
-  {
-    category: "server-administration",
-    level: 50,
-    name: "Apache Tomcat",
-  },
-  {
-    category: "ide",
-    name: "Dev-C++",
-  },
-  {
-    category: "front-end",
-    level: 90,
-    name: "Material Design",
-  },
-  {
-    category: "front-end",
-    level: 100,
-    name: "HTML 5",
-  },
-  {
-    category: "ide",
-    name: "Eclipse",
-  },
-  {
-    category: "ide",
-    name: "Netbeans",
-  },
-  {
-    category: "back-end",
-    level: 50,
-    name: "Java/J2ee",
-  },
-  {
-    category: "ide",
-    name: "Expression Blend",
-  },
-  {
-    category: "project-management",
-    name: "SCRUM Management",
-  },
-  {
-    category: "server-administration",
-    level: 50,
-    name: "Shell Script",
-  },
-  {
-    category: "project-management",
-    name: "MS project",
-  },
-  {
-    category: "server-administration",
-    level: 70,
-    name: "Apache httpd",
-  },
-  {
-    category: "miscellaneous",
-    name: "Employment law",
-  },
-  {
-    category: "operating-systems",
-    level: 100,
-    name: "Ubuntu / Debian",
-  },
-  {
-    category: "ide",
-    name: "MS Visual Studio",
-  },
-  {
-    category: "front-end",
-    level: 100,
-    name: "JQuery",
-  },
-  {
-    category: "database",
-    level: 75,
-    name: "Access",
-  },
-  {
-    category: "back-end",
-    level: 25,
-    name: "Flex",
-  },
-  {
-    category: "back-end",
-    level: 50,
-    name: "C++",
-  },
-  {
-    category: "database",
-    level: 75,
-    name: "MS SQLServer",
-  },
-  {
-    category: "front-end",
-    level: 75,
-    name: "JavaScript",
-  },
-  {
-    category: "back-end",
-    level: 100,
-    name: "XML",
-  },
-  {
-    category: "languages",
-    description: "Learning...",
-    level: 10,
-    name: "Vietnamese",
-  },
-  {
-    category: "operating-systems",
-    name: "Linux other distributions",
-  },
-  {
-    category: "front-end",
-    level: 100,
-    name: "CSS3",
-  },
-  {
-    category: "modelling",
-    name: "MERISE",
-  },
-  {
-    category: "project-management",
-    name: "Team motivation",
-  },
-  {
-    category: "miscellaneous",
-    name: "Marketing",
-  },
-  {
-    category: "ide",
-    level: 90,
-    name: "IntelliJ, PHPStorm",
-  },
-  {
-    category: "miscellaneous",
-    name: "Nano-science",
-  },
-  {
-    category: "front-end",
-    level: 80,
-    name: "Angular",
-  },
-  {
-    category: "operating-systems",
-    level: 100,
-    name: "MacOS 10.x",
-  },
-  {
-    category: "back-end",
-    description: "",
-    level: 85,
-    name: "NodeJS",
+import { FirestoreSkillByCategory } from "../../src/types/skill";
+
+export const skillFixture = (): FirestoreSkillByCategory[] => [
+  {
+    id: "server-administration",
+    label: "Server administration",
+    order: 3,
+    skills: [
+      { label: "Apache Tomcat", level: 50 },
+      { label: "Shell Script", level: 50 },
+      { label: "Apache httpd", level: 70 },
+    ],
+  },
+  {
+    id: "back-end",
+    label: "Back-end development",
+    order: 1,
+    skills: [
+      { label: "GoLang", level: 20 },
+      { label: "C#/Windows Phone", level: 50 },
+      { label: "Java/Android API", level: 25 },
+      { label: "Python", level: 50 },
+      { label: "Spring Framework", level: 40 },
+      { label: "XSLT", level: 75 },
+      { label: "C/GTK+", level: 50 },
+      { label: "Visual Basic", level: 75 },
+      { description: "SFR mobile Meta Language", label: "PML", level: 75 },
+      { label: "VBA Excel & Access", level: 75 },
+      { description: "Orange mobile Meta Language", label: "OML", level: 75 },
+      { label: ".NET/C#/WPF", level: 75 },
+      { label: "PHP", level: 75 },
+      { label: "Django", level: 50 },
+      { label: "Java/J2ee", level: 50 },
+      { label: "Flex", level: 25 },
+      { label: "C++", level: 50 },
+      { label: "XML", level: 100 },
+      { label: "NodeJS", level: 85 },
+    ],
+  },
+  {
+    id: "front-end",
+    label: "Front-end development",
+    order: 2,
+    skills: [
+      { label: "Functional CSS", level: 100 },
+      { label: "ReactJS/Redux", level: 80 },
+      { label: "BEM", level: 100 },
+      { label: "Webpack", level: 100 },
+      { label: "VueJS", level: 70 },
+      { label: "Grunt, Gulp", level: 90 },
+      { label: "Foundation", level: 80 },
+      { label: "Bootstrap 3 & 4", level: 75 },
+      { label: "sass, less", level: 100 },
+      { label: "Material Design", level: 90 },
+      { label: "HTML 5", level: 100 },
+      { label: "JQuery", level: 100 },
+      { label: "JavaScript", level: 75 },
+      { label: "CSS3", level: 100 },
+      { label: "Angular", level: 80 },
+    ],
+  },
+  {
+    id: "source-control",
+    label: "Source Control",
+    order: 4,
+    skills: [
+      { label: "GIT, Gitlab", level: 80 },
+      { label: "SVN", level: 80 },
+    ],
+  },
+  {
+    id: "database",
+    label: "Database",
+    order: 5,
+    skills: [
+      { label: "SQL", level: 75 },
+      { label: "Oracle", level: 75 },
+      { label: "MySQL", level: 100 },
+      { label: "Access", level: 75 },
+      { label: "MS SQLServer", level: 75 },
+    ],
+  },
+  {
+    id: "operating-systems",
+    label: "Operating Systems",
+    order: 6,
+    skills: [
+      { label: "CentOS", level: 80 },
+      { label: "Windows xp, Vista, 7, 8", level: 100 },
+      { label: "Ubuntu / Debian", level: 100 },
+      { label: "Linux other distributions" },
+      { label: "MacOS 10.x", level: 100 },
+    ],
+  },
+  {
+    id: "modelling",
+    label: "Modelling",
+    order: 7,
+    skills: [{ label: "MERISE2" }, { label: "UML" }, { label: "MERISE" }],
+  },
+  {
+    id: "project-management",
+    label: "Project Management",
+    order: 8,
+    skills: [
+      {
+        description:
+          "Post-conception cost quantification, Optimization of cost and time",
+        label: "Planning & cost",
+      },
+      { label: "Technical specifications" },
+      {
+        description: "Brainstorming, storyboard, managing graphic design, ...",
+        label: "Conception",
+      },
+      {
+        description:
+          "Technical expertise, commercial proposal, quotation of cost",
+        label: "Pre-sales",
+      },
+      { label: "SCRUM Management" },
+      { label: "MS project" },
+      { label: "Team motivation" },
+    ],
+  },
+  {
+    id: "ide",
+    label: "IDE",
+    order: 9,
+    skills: [
+      { label: "Dev-C++" },
+      { label: "Eclipse" },
+      { label: "Netbeans" },
+      { label: "Expression Blend" },
+      { label: "MS Visual Studio" },
+      { label: "IntelliJ, PHPStorm", level: 90 },
+    ],
+  },
+  {
+    id: "languages",
+    label: "languages",
+    order: 10,
+    skills: [
+      { description: "native language", label: "French", level: 100 },
+      { description: "fluent - TOEIC: 820pts", label: "English", level: 75 },
+      { description: "Learning...", label: "Vietnamese", level: 10 },
+    ],
+  },
+  {
+    id: "miscellaneous",
+    label: "Miscellaneous",
+    order: 11,
+    skills: [
+      { label: "Electronics" },
+      { label: "Economics" },
+      { label: "Quality control" },
+      { label: "Probabilities" },
+      { label: "Employment law" },
+      { label: "Marketing" },
+      { label: "Nano-science" },
+    ],
   },
 ];
