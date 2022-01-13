@@ -15,22 +15,14 @@ describe("/interests", () => {
     const { body, status } = await subject();
 
     expect(status).toBe(200);
-    expect(body).toHaveLength(20);
+    expect(body).toHaveLength(10);
 
     expect(body[0]).toMatchInlineSnapshot(`
       Object {
-        "name": "6 months travel around Southeast Asia",
+        "description": "China, Vietnam, Thaïland, Laos, Cambodia, Malaysia, Indonesia, India, Iceland, Ecuador, USA, Brazil, Spain, and more...",
+        "label": "Travel",
         "order": 0,
       }
     `);
-  });
-});
-
-describe("/interests/categories", () => {
-  test("returns interest content", async () => {
-    const { body, status } = await subject("/categories");
-    expect(status).toBe(200);
-
-    expect(body).toHaveLength(0);
   });
 });
