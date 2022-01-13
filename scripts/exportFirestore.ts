@@ -4,18 +4,21 @@ import { firestore } from "../src/lib/db";
 import { categoryFixture } from "../test/fixtures/category";
 import { educationFixture } from "../test/fixtures/education";
 import { interestFixture } from "../test/fixtures/interest";
+import { skillFixture } from "../test/fixtures/skill";
 import { travelFixture } from "../test/fixtures/travel";
 import { workFixture } from "../test/fixtures/work";
+import { FirestoreCategory } from "../src/types/category";
+import { FirestoreSkillByCategory } from "../src/types/skill";
 
 export const insertCategories = async () => {
   const cats = categoryFixture();
 
   await Promise.all(
-    cats.map(({ name, order }) =>
+    cats.map(({ label, order }) =>
       firestore
         .collection("category")
-        .doc(name.toLowerCase().replace(" ", "-"))
-        .set({ label: name, order })
+        .doc(label.toLowerCase().replace(" ", "-"))
+        .set({ label, order })
     )
   );
 };
@@ -63,6 +66,31 @@ export const insertInterests = async () => {
     )
   );
 };
+export const insertSkills = async () => {
+  const skillsFix = skillFixture();
+
+  const categoryMap = categoryFixture().reduce<
+    Record<string, FirestoreCategory>
+  >((map, cat) => ({ ...map, [cat.id]: cat }), {});
+
+  const skillsByCategory = skillsFix.reduce<
+    Record<string, FirestoreSkillByCategory>
+  >((acc, { category, ...rest }) => {
+    if (!categoryMap[category]) {
+      throw Error("missing category");
+    }
+    const cat = acc[category] ?? { ...categoryMap[category], skills: [] };
+    cat.skills.push(rest);
+
+    return { ...acc, [category]: cat };
+  }, {});
+
+  await Promise.all(
+    Object.entries(skillsByCategory).map(([id, { label, order, skills }]) =>
+      firestore.collection("skill").doc(id).set({ label, order, skills })
+    )
+  );
+};
 
 export const insertWorks = async () => {
   const works = workFixture();
@@ -82,7 +110,7 @@ export const insertWorks = async () => {
   );
 };
 
-insertInterests()
+insertSkills()
   .then(() => {
     console.info("DONE");
   })
