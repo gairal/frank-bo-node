@@ -12,7 +12,7 @@ export const categoryFixture = (): FirestoreCategory[] => [
   { id: "ide", label: "IDE", order: 9 },
   { id: "source-control", label: "Source Control", order: 4 },
   { id: "operating-systems", label: "Operating Systems", order: 6 },
-  { id: "back-end-development", label: "Back-end development", order: 2 },
+  { id: "back-end", label: "Back-end development", order: 1 },
   { id: "server-administration", label: "Server administration", order: 3 },
-  { id: "front-end-development", label: "Front-end development", order: 1 },
+  { id: "front-end", label: "Front-end development", order: 2 },
 ];
