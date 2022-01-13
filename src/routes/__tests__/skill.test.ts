@@ -12,11 +12,3 @@ describe("/skills", () => {
     expect(body).toHaveLength(0);
   });
 });
-
-describe("/skills/categories", () => {
-  test("returns skill content", async () => {
-    const { body, status } = await subject("/categories");
-    expect(status).toBe(200);
-    expect(body).toHaveLength(0);
-  });
-});

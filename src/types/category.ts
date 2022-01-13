@@ -6,4 +6,4 @@ export interface FirestoreCategory extends DatabaseDocument {
   order: number;
 }
 
-export type Category = Pick<FirestoreCategory, "label" | "order" | "id">;
+export type Category = Pick<FirestoreCategory, "label">;
