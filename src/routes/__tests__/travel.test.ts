@@ -1,9 +1,6 @@
 import * as request from "supertest";
 
-import { mockDb } from "../../../test/fixtures";
 import { app } from "../../app";
-
-mockDb();
 
 const subject = async () => request(app.callback()).get("/travels");
 

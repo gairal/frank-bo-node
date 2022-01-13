@@ -1,12 +1,12 @@
-import { Firestore } from "@google-cloud/firestore";
+import { FakeFirestore } from "firestore-jest-mock";
 
 import { FirestoreCategory } from "../../src/types/category";
 import { FirestoreInterest } from "../../src/types/interest";
 
 const getRef = (category: string) =>
-  new Firestore().doc(
+  new FakeFirestore().doc(
     `/category/${category}`
-  ) as FirebaseFirestore.DocumentReference<FirestoreCategory>;
+  ) as unknown as FirebaseFirestore.DocumentReference<FirestoreCategory>;
 
 export const interestFixture = (): FirestoreInterest[] => [
   {
