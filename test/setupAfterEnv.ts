@@ -1,7 +1,18 @@
-import { mockDb } from "./fixtures";
+import { mockGoogleCloudFirestore } from "firestore-jest-mock";
 
-/**
- * initial DB mock to avoid error on CI
- * "Unable to detect a Project Id in the current environment"
- */
-mockDb();
+import { categoryFixture } from "./fixtures/category";
+import { educationFixture } from "./fixtures/education";
+import { interestFixture } from "./fixtures/interest";
+import { travelFixture } from "./fixtures/travel";
+import { workFixture } from "./fixtures/work";
+
+mockGoogleCloudFirestore({
+  database: {
+    category: categoryFixture(),
+    education: educationFixture(),
+    interest: interestFixture(),
+    // skill: skillFixture(),
+    travel: travelFixture(),
+    work: workFixture(),
+  },
+});

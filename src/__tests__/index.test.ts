@@ -9,7 +9,7 @@ afterEach(() => {
   mockListen.mockClear();
 });
 
-test("Server works", () => {
+test("server works", () => {
   // eslint-disable-next-line global-require
   require("..");
   expect(app.listen).toHaveBeenCalledTimes(1);
