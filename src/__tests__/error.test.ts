@@ -1,7 +1,7 @@
 import * as request from "supertest";
-import { mockGet } from "firestore-jest-mock/mocks/firestore";
 
 import { app } from "../app";
+import * as educationModel from "../model/education";
 
 const subject = async (path: string) => request(app.callback()).get(path);
 
@@ -12,14 +12,14 @@ describe("error", () => {
     expect(body).toStrictEqual({});
   });
 
-  test.skip("returns a 500 on error", async () => {
-    mockGet.mockRejectedValueOnce("NETWORK_ERROR");
+  test("returns a 500 status on error", async () => {
+    jest
+      .spyOn(educationModel, "getAll")
+      .mockRejectedValueOnce(Error("NETWORK_ERROR"));
 
     const { body, status } = await subject("/educations");
-    expect(mockGet).toHaveBeenCalledTimes(1);
 
-    expect(status).toBe(200);
-    expect(body).toHaveLength(3);
-    expect(mockGet).toHaveBeenCalledTimes(1);
+    expect(status).toBe(500);
+    expect(body).toMatchObject({ message: "NETWORK_ERROR" });
   });
 });

@@ -2,7 +2,7 @@ import * as request from "supertest";
 
 import { app } from "../../app";
 
-const subject = async () => request(app.callback()).get("/travels");
+const subject = () => request(app.callback()).get("/travels");
 
 describe("/travels", () => {
   test("returns travel content", async () => {
