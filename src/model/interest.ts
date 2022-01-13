@@ -6,9 +6,7 @@ import { FirestoreInterest, Interest } from "../types/interest";
 const collection = firestore.collection("interest").withConverter<Interest>({
   fromFirestore: (snapshot: QueryDocumentSnapshot<FirestoreInterest>) => {
     const { order, ...rest } = snapshot.data();
-    // return rest;
-
-    return { order, ...rest, id: snapshot.id };
+    return rest;
   },
   toFirestore: () => ({}),
 });
