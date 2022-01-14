@@ -6,8 +6,8 @@ export interface FirestoreEducation extends DatabaseDocument {
   dateIn: Timestamp;
   dateOut: Timestamp;
   diploma: string;
-  image: string;
   extra?: string;
+  image: string;
   name: string;
   place: string;
   shortDescription: string;
