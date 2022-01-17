@@ -12,15 +12,14 @@ describe("/works", () => {
 
     expect(body[0]).toMatchInlineSnapshot(`
       Object {
-        "accomplishments": "...",
+        "achievements": Array [],
+        "company": "Ekino",
         "dateIn": Object {
           "_nanoseconds": 0,
           "_seconds": 1514764800,
         },
         "description": "Ekino is a digital marketing agency based in Paris. It is part of the Fullsix group.",
         "image": "ekino.png",
-        "name": "Ekino",
-        "order": 0,
         "place": "San Francisco",
         "title": "Tech lead / Solution Architect",
         "website": "https://www.ekino.com/",

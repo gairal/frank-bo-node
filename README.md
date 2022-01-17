@@ -2,6 +2,6 @@
 
 ## todo
 
-- [ ] delete old google cloud project
+- [ ] re-model accomplishments
 - [ ] remove order in work and travel ?
 - [ ] add lru-cache or node-cache

@@ -5,7 +5,7 @@ import { FirestoreWork, Work } from "../types/work";
 
 const collection = firestore.collection("work").withConverter<Work>({
   fromFirestore: (snapshot: QueryDocumentSnapshot<FirestoreWork>) => {
-    const { dateIn, dateOut, order, ...rest } = snapshot.data();
+    const { dateIn, dateOut, ...rest } = snapshot.data();
     return {
       ...rest,
       dateIn: dateIn.toDate(),

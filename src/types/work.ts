@@ -3,13 +3,12 @@ import { Timestamp } from "@google-cloud/firestore";
 import { DatabaseDocument } from "firestore-jest-mock/mocks/firebase";
 
 export interface FirestoreWork extends DatabaseDocument {
-  accomplishments: string;
+  achievements: { description: string; highlights?: string[] }[];
+  company: string;
   dateIn: Timestamp;
   dateOut?: Timestamp;
   description: string;
   image: string;
-  name: string;
-  order: number;
   place: string;
   title: string;
   website: string;
@@ -18,10 +17,10 @@ export interface FirestoreWork extends DatabaseDocument {
 export interface Work
   extends Pick<
     FirestoreWork,
-    | "accomplishments"
+    | "achievements"
+    | "company"
     | "description"
     | "image"
-    | "name"
     | "place"
     | "title"
     | "website"
