@@ -19,4 +19,13 @@ export const getAll = () =>
   collection
     .orderBy("order")
     .get()
-    .then(({ docs }) => docs.map((doc) => doc.data()));
+    .then(({ docs }) =>
+      docs.map((doc) => {
+        const data = doc.data();
+        data.skills.sort(
+          ({ level: levelA = 0 }, { level: levelB = 0 }) => levelB - levelA
+        );
+
+        return data;
+      })
+    );

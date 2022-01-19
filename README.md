@@ -2,6 +2,8 @@
 
 ## todo
 
-- [ ] re-model accomplishments
+- [ ] re-model accomplishments - test update
 - [ ] remove order in work and travel ?
-- [ ] add lru-cache or node-cache
+- [ ] switch repos to public?
+- [ ] write readme
+- [ ] add lru-cache + reset endpoint?
