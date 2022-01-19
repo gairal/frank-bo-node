@@ -1,6 +1,8 @@
-node_modules
-.DS_Store
-rethinkdb_data
+/coverage/
+/dist/
+/node_modules/
+/scripts/import/*.json
 
-npm-debug.log
-datastore.json
+.env
+.eslintcache
+yarn-error.log

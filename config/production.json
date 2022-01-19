@@ -1,6 +1,0 @@
-{
-  "KOA": {
-    "port": 8080
-  },
-  "LOG_LEVEL": "error"
-}
