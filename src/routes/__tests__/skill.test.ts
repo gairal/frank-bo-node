@@ -16,16 +16,16 @@ describe("/skills", () => {
         "order": 3,
         "skills": Array [
           Object {
+            "label": "Apache httpd",
+            "level": 70,
+          },
+          Object {
             "label": "Apache Tomcat",
             "level": 50,
           },
           Object {
             "label": "Shell Script",
             "level": 50,
-          },
-          Object {
-            "label": "Apache httpd",
-            "level": 70,
           },
         ],
       }

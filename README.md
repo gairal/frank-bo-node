@@ -1,9 +1,41 @@
-# frank.gairal.com API ![workflow](https://github.com/gairal/frank-bo-node/actions/workflows/ci.yml/badge.svg)
+# [frank.gairal.rocks](https://frank.gairal.rocks) RESTful API ![CI status](https://github.com/gairal/frank-bo-node/actions/workflows/ci.yml/badge.svg)
 
-## todo
+> A REST API built with [TypeScript](https://www.typescriptlang.org/), [Koa](https://koajs.com/),
+> [Jest](https://jestjs.io/), [Prettier](https://prettier.io/), [eslint](https://eslint.org/) and ❤️
 
-- [ ] re-model accomplishments - test update
-- [ ] remove order in work and travel ?
-- [ ] switch repos to public?
-- [ ] write readme
+## TOC
+
+- [Quick Start](#quick-start)
+- [Commands](#commands)
+- [To-do](#to-do)
+
+## Quick Start
+
+```bash
+# clone the repo
+git clone git@github.com:gairal/frank-bo-node.git
+
+# enter the repo directory
+cd frank-bo-node
+
+# install the dependencies
+yarn
+
+# start the ts-node-dev process
+yarn start
+
+# access the API on http://localhost:8080
+```
+
+## Commands
+
+- `yarn build`: Production build generated into ./dist
+- `yarn dev`: launches a ts-node-dev watcher
+- `yarn lint`: lints the whole sources and tests with eslint
+- `yarn test`: runs Jest tests
+- `yarn test`: runs Jest tests with coverage
+- `yarn start`: runs the project in production mode
+
+## To-do
+
 - [ ] add lru-cache + reset endpoint?
