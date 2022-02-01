@@ -29,12 +29,12 @@ yarn start
 
 ## Commands
 
-- `yarn build`: Production build generated into ./dist
+- `yarn build`: builds the app for production
 - `yarn dev`: launches a ts-node-dev watcher
 - `yarn lint`: lints the whole sources and tests with eslint
-- `yarn test`: runs Jest tests
-- `yarn test`: runs Jest tests with coverage
 - `yarn start`: runs the project in production mode
+- `yarn test-cov`: runs Jest tests with coverage
+- `yarn test`: runs Jest tests
 
 ## To-do
 
