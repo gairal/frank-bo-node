@@ -1,4 +1,5 @@
 import * as Koa from "koa";
+import * as helmet from "koa-helmet";
 import * as logger from "koa-logger";
 import * as cors from "@koa/cors";
 
@@ -19,6 +20,7 @@ if (LOG_LEVEL === "debug") {
 }
 
 app.use(errorHandler);
+app.use(helmet());
 app.use(
   cors({
     allowMethods: ["GET"],
