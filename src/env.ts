@@ -6,4 +6,4 @@ config();
 
 export const LOG_LEVEL: LogLevel =
   (process.env.LOG_LEVEL as LogLevel) || "error";
-export const PORT = Number(process.env.PORT) || 8080;
+export const PORT = Number(process.env.PORT) || 8000;

@@ -24,7 +24,7 @@ yarn
 # start the ts-node-dev process
 yarn start
 
-# access the API on http://localhost:8080
+# access the API on http://localhost:8000
 ```
 
 ## Commands
