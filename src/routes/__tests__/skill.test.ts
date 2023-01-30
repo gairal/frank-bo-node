@@ -11,19 +11,19 @@ describe("/skills", () => {
     expect(body).toHaveLength(11);
 
     expect(body[0]).toMatchInlineSnapshot(`
-      Object {
+      {
         "label": "Server administration",
         "order": 3,
-        "skills": Array [
-          Object {
+        "skills": [
+          {
             "label": "Apache httpd",
             "level": 70,
           },
-          Object {
+          {
             "label": "Apache Tomcat",
             "level": 50,
           },
-          Object {
+          {
             "label": "Shell Script",
             "level": 50,
           },

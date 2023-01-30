@@ -17,7 +17,7 @@ describe("/interests", () => {
     expect(body).toHaveLength(10);
 
     expect(body[0]).toMatchInlineSnapshot(`
-      Object {
+      {
         "description": "China, Vietnam, Thaïland, Laos, Cambodia, Malaysia, Indonesia, India, Iceland, Ecuador, USA, Brazil, Spain, and more...",
         "label": "Travel",
         "order": 0,
