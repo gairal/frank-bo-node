@@ -1,6 +1,6 @@
 {
   "name": "frank-gairal-bo",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "main": "dist/index.js",
   "author": "@gairal",
   "license": "MIT",
@@ -43,13 +43,13 @@
   },
   "dependencies": {
     "@google-cloud/firestore": "^5.0.1",
-    "@koa/cors": "^3.1.0",
-    "dotenv": "^10.0.0",
-    "koa": "^2.13.0",
+    "@koa/cors": "^4.0.0",
+    "dotenv": "^16.0.3",
+    "koa": "^2.14.1",
     "koa-helmet": "^6.1.0",
     "koa-logger": "^3.2.1",
-    "koa-router": "^10.1.0",
-    "winston": "^3.3.0"
+    "koa-router": "^12.0.0",
+    "winston": "^3.8.2"
   },
   "lint-staged": {
     "*.{js,cjs,ts,svelte}": [
