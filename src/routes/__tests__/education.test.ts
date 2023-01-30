@@ -11,12 +11,12 @@ describe("/education", () => {
     expect(body).toHaveLength(3);
 
     expect(body[0]).toMatchInlineSnapshot(`
-      Object {
-        "dateIn": Object {
+      {
+        "dateIn": {
           "_nanoseconds": 0,
           "_seconds": 1125532800,
         },
-        "dateOut": Object {
+        "dateOut": {
           "_nanoseconds": 0,
           "_seconds": 1217462400,
         },
