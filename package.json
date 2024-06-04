@@ -49,7 +49,7 @@
     "koa-helmet": "^7.0.2",
     "koa-logger": "^3.2.1",
     "koa-router": "^12.0.0",
-    "winston": "^3.8.2"
+    "winston": "^3.13.0"
   },
   "lint-staged": {
     "*.{js,cjs,ts,svelte}": [
