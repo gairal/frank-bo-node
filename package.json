@@ -11,7 +11,7 @@
     "dev": "tsnd --respawn --inspect -- ./src/index.ts",
     "gcp-build": "npm run build",
     "lint": "eslint . --ext .js,.ts --quiet",
-    "prepare": "husky install",
+    "prepare": "husky",
     "start": "node dist",
     "test": "LOG_LEVEL=error jest",
     "test-cov": "yarn test --collectCoverage"
@@ -32,7 +32,7 @@
     "eslint-plugin-testing-library": "^5.10.0",
     "eslint-plugin-typescript-sort-keys": "^3.2.0",
     "firestore-jest-mock": "^0.20.0",
-    "husky": "^8.0.3",
+    "husky": "^9.0.11",
     "jest": "^29.5.0",
     "lint-staged": "^15.2.5",
     "prettier": "^2.8.8",
