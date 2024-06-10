@@ -2992,10 +2992,10 @@ find-up@^5.0.0:
     locate-path "^6.0.0"
     path-exists "^4.0.0"
 
-firestore-jest-mock@^0.20.0:
-  version "0.20.0"
-  resolved "https://registry.yarnpkg.com/firestore-jest-mock/-/firestore-jest-mock-0.20.0.tgz#11852fc69aa5ae6da3a045aab1e7faeb4e678af2"
-  integrity sha512-C2YmGy42DeDHp4w3deQ+xOJ6L2LhLcNXQ/rOacrqgwaFoBjQP6bbVJtVmFvgk6zdVKgXA4GNJpqIjjlJG9zo4Q==
+firestore-jest-mock@^0.25.0:
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/firestore-jest-mock/-/firestore-jest-mock-0.25.0.tgz#f388cf22fe52e1ad334a4b5a3834c944d7086e29"
+  integrity sha512-y1WtauwQTfKMzx84mCoL6HR8y42XB7NRs07kKXGXbH98nlYk1geVDdeshm4LgHRqb7URqpy6ShwR5b9QGHxHAQ==
 
 flat-cache@^3.0.4:
   version "3.0.4"
