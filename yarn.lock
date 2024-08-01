@@ -627,10 +627,10 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.57.0.tgz#a5417ae8427873f1dd08b70b3574b453e67b5f7f"
   integrity sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==
 
-"@google-cloud/firestore@^7.8.0":
-  version "7.8.0"
-  resolved "https://registry.yarnpkg.com/@google-cloud/firestore/-/firestore-7.8.0.tgz#029bed6c47de84c667a27256acbaca6f6ee50e15"
-  integrity sha512-m21BWVZLz7H7NF8HZ5hCGUSCEJKNwYB5yzQqDTuE9YUzNDRMDei3BwVDht5k4xF636sGlnobyBL+dcbthSGONg==
+"@google-cloud/firestore@^7.9.0":
+  version "7.9.0"
+  resolved "https://registry.yarnpkg.com/@google-cloud/firestore/-/firestore-7.9.0.tgz#fcacef51c07e39c083bad3a4801814a7a60a878a"
+  integrity sha512-c4ALHT3G08rV7Zwv8Z2KG63gZh66iKdhCBeDfCpIkLrjX6EAjTD/szMdj14M+FnQuClZLFfW5bAgoOjfNmLtJg==
   dependencies:
     fast-deep-equal "^3.1.1"
     functional-red-black-tree "^1.0.1"
