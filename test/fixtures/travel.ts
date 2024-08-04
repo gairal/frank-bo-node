@@ -1,6 +1,6 @@
 import { GeoPoint } from "@google-cloud/firestore";
 
-import { FirestoreTravel } from "../../src/types/travel";
+import type { FirestoreTravel } from "../../src/types/travel";
 
 export const travelFixture = (): FirestoreTravel[] => [
   {

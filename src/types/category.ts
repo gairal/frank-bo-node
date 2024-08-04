@@ -1,4 +1,4 @@
-import { DocumentData } from "@google-cloud/firestore";
+import type { DocumentData } from "@google-cloud/firestore";
 
 export interface FirestoreCategory extends DocumentData {
   label: string;

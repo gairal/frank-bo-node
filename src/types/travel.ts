@@ -1,4 +1,4 @@
-import { DocumentData, GeoPoint } from "@google-cloud/firestore";
+import type { DocumentData, GeoPoint } from "@google-cloud/firestore";
 
 export interface FirestoreTravel extends DocumentData {
   coordinates: GeoPoint;

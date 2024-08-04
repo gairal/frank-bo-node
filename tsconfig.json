@@ -1,13 +1,8 @@
 {
+  "extends": "@tsconfig/node20/tsconfig.json",
   "compilerOptions": {
-    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "lib": ["ES2023"],
-    "module": "commonjs",
-    "outDir": "./dist",
-    "skipLibCheck": true,
-    "strict": true,
-    "target": "ES2022"
+    "outDir": "./dist"
   },
   "exclude": [
     "./__mocks__",

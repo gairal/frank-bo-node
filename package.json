@@ -18,6 +18,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.8.3",
+    "@tsconfig/node20": "^20.1.4",
     "@types/jest": "^29.5.12",
     "@types/koa": "^2.15.0",
     "@types/koa-logger": "^3.1.5",
@@ -44,7 +45,6 @@
     "winston": "^3.13.1"
   },
   "lint-staged": {
-    "*.{ts,type-check}": "bun tsc --noEmit",
     "*.{js,cjs,ts,json,md,lint}": ["bun lint --fix"]
   }
 }

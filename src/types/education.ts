@@ -1,4 +1,4 @@
-import { DocumentData, Timestamp } from "@google-cloud/firestore";
+import type { DocumentData, Timestamp } from "@google-cloud/firestore";
 
 export interface FirestoreEducation extends DocumentData {
   dateIn: Timestamp;

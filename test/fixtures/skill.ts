@@ -1,4 +1,4 @@
-import { FirestoreSkillByCategory } from "../../src/types/skill";
+import type { FirestoreSkillByCategory } from "../../src/types/skill";
 
 export const skillFixture = (): FirestoreSkillByCategory[] => [
   {
