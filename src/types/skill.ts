@@ -1,4 +1,4 @@
-import { FirestoreCategory } from "./category";
+import type { FirestoreCategory } from "./category";
 
 export interface FirestoreSkillByCategory extends FirestoreCategory {
   skills: { description?: string; label: string; level?: number }[];

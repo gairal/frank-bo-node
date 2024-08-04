@@ -1,4 +1,4 @@
-import { DocumentData } from "@google-cloud/firestore";
+import type { DocumentData } from "@google-cloud/firestore";
 
 export interface FirestoreInterest extends DocumentData {
   description?: string;

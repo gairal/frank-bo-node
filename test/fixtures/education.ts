@@ -1,6 +1,6 @@
 import { Timestamp } from "@google-cloud/firestore";
 
-import { FirestoreEducation } from "../../src/types/education";
+import type { FirestoreEducation } from "../../src/types/education";
 
 export const educationFixture = (): FirestoreEducation[] => [
   {

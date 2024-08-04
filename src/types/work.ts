@@ -1,4 +1,4 @@
-import { DocumentData, Timestamp } from "@google-cloud/firestore";
+import type { DocumentData, Timestamp } from "@google-cloud/firestore";
 
 export interface FirestoreWork extends DocumentData {
   achievements: { description: string; highlights?: string[] }[];

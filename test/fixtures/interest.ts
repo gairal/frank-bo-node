@@ -1,4 +1,4 @@
-import { FirestoreInterest } from "../../src/types/interest";
+import type { FirestoreInterest } from "../../src/types/interest";
 
 export const interestFixture = (): FirestoreInterest[] => [
   {

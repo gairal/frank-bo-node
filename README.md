@@ -1,7 +1,7 @@
 # [frank.gairal.rocks](https://frank.gairal.rocks) RESTful API ![CI status](https://github.com/gairal/frank-bo-node/actions/workflows/ci.yml/badge.svg)
 
 > A REST API built with [TypeScript](https://www.typescriptlang.org/), [Koa](https://koajs.com/),
-> [Jest](https://jestjs.io/), [Prettier](https://prettier.io/), [eslint](https://eslint.org/) and ❤️
+> [Jest](https://jestjs.io/), [bun](https://bun.sh/), [biome](https://biomejs.dev/) and ❤️
 
 ## TOC
 

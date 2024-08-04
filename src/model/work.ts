@@ -1,7 +1,7 @@
-import { QueryDocumentSnapshot } from "@google-cloud/firestore";
+import type { QueryDocumentSnapshot } from "@google-cloud/firestore";
 
 import { firestore } from "../lib/db";
-import { FirestoreWork, Work } from "../types/work";
+import type { FirestoreWork, Work } from "../types/work";
 
 const collection = firestore.collection("work").withConverter<Work>({
   fromFirestore: (snapshot: QueryDocumentSnapshot<FirestoreWork>) => {
