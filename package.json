@@ -8,8 +8,7 @@
   "scripts": {
     "build": "tsc",
     "deploy": "gcloud app deploy --project com-gairal-frank-22",
-    "dev": "tsnd --respawn --inspect -- ./src/index.ts",
-    "dev2": "bun run --hot --inspect ./src/index.ts",
+    "dev": "bun run --hot --inspect ./src/index.ts",
     "gcp-build": "npm run build",
     "lint": "eslint . --ext .js,.ts --quiet",
     "prepare": "husky",
@@ -39,7 +38,6 @@
     "prettier": "^2.8.8",
     "supertest": "^7.0.0",
     "ts-jest": "^29.2.3",
-    "ts-node-dev": "^2.0.0",
     "typescript": "^5.5.4"
   },
   "dependencies": {
