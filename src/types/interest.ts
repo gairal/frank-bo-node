@@ -1,7 +1,6 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { DatabaseDocument } from "firestore-jest-mock/mocks/firebase";
+import { DocumentData } from "@google-cloud/firestore";
 
-export interface FirestoreInterest extends DatabaseDocument {
+export interface FirestoreInterest extends DocumentData {
   description?: string;
   label: string;
   order: number;

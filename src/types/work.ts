@@ -1,8 +1,6 @@
-import { Timestamp } from "@google-cloud/firestore";
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { DatabaseDocument } from "firestore-jest-mock/mocks/firebase";
+import { DocumentData, Timestamp } from "@google-cloud/firestore";
 
-export interface FirestoreWork extends DatabaseDocument {
+export interface FirestoreWork extends DocumentData {
   achievements: { description: string; highlights?: string[] }[];
   company: string;
   dateIn: Timestamp;
