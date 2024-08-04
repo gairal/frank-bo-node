@@ -19,22 +19,22 @@ git clone git@github.com:gairal/frank-bo-node.git
 cd frank-bo-node
 
 # install the dependencies
-yarn
+bun i
 
 # start the ts-node-dev process
-yarn start
+bun start
 
 # access the API on http://localhost:8000
 ```
 
 ## Commands
 
-- `yarn build`: builds the app for production
-- `yarn dev`: launches a ts-node-dev watcher
-- `yarn lint`: lints the whole sources and tests with eslint
-- `yarn start`: runs the project in production mode
-- `yarn test-cov`: runs Jest tests with coverage
-- `yarn test`: runs Jest tests
+- `bun run build`: builds the app for production
+- `bun dev`: launches a ts-node-dev watcher
+- `bun lint`: lints the whole sources and tests with eslint
+- `bun start`: runs the project in production mode
+- `bun test-cov`: runs Jest tests with coverage
+- `bun run test`: runs Jest tests
 
 ## To-do
 

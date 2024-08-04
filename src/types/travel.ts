@@ -1,8 +1,6 @@
-import { GeoPoint } from "@google-cloud/firestore";
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { DatabaseDocument } from "firestore-jest-mock/mocks/firebase";
+import { DocumentData, GeoPoint } from "@google-cloud/firestore";
 
-export interface FirestoreTravel extends DatabaseDocument {
+export interface FirestoreTravel extends DocumentData {
   coordinates: GeoPoint;
   order: number;
   place: string;
