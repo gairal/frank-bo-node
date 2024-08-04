@@ -1,7 +1,7 @@
-import * as Koa from "koa";
-import * as helmet from "koa-helmet";
-import * as logger from "koa-logger";
-import * as cors from "@koa/cors";
+import Koa from "koa";
+import helmet from "koa-helmet";
+import logger from "koa-logger";
+import cors from "@koa/cors";
 
 import { educationRouter } from "./routes/education";
 import { interestRouter } from "./routes/interest";
