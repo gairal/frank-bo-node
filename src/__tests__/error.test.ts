@@ -1,4 +1,4 @@
-import * as request from "supertest";
+import request from "supertest";
 
 import { app } from "../app";
 import * as educationModel from "../model/education";
