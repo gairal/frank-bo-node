@@ -4,5 +4,4 @@
 /scripts/import/*.json
 
 .env
-.eslintcache
 yarn-error.log

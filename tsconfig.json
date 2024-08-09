@@ -2,7 +2,8 @@
   "extends": "@tsconfig/node20/tsconfig.json",
   "compilerOptions": {
     "forceConsistentCasingInFileNames": true,
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "types": ["vitest/globals"]
   },
   "exclude": [
     "./__mocks__",
