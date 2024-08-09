@@ -23,7 +23,7 @@
     }
   },
   "javascript": {
-    "globals": ["afterEach", "describe", "expect", "it", "test", "vi"]
+    "globals": ["afterEach", "describe", "expect", "it", "test"]
   },
   "overrides": [
     {
