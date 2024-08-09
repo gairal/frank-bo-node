@@ -12,7 +12,6 @@ afterEach(() => {
 });
 
 test("server works", () => {
-  // require("../index.ts");
   expect(app.listen).toHaveBeenCalledTimes(1);
   expect(app.listen).toHaveBeenCalledWith(PORT, expect.any(Function));
 });
