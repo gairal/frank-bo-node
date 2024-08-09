@@ -14,7 +14,7 @@
     "prepare": "husky",
     "start": "node dist",
     "test": "LOG_LEVEL=error vitest",
-    "test-cov": "bun run test --collectCoverage"
+    "test-cov": "bun run test --coverage"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.8.3",
