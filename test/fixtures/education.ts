@@ -1,8 +1,10 @@
 import { Timestamp } from "@google-cloud/firestore";
 
+import type { DatabaseDocument } from "firestore-vitest/mocks/firestore";
 import type { FirestoreEducation } from "../../src/types/education";
 
-export const educationFixture = (): FirestoreEducation[] => [
+export const educationFixture = (): (FirestoreEducation &
+  DatabaseDocument)[] => [
   {
     dateIn: Timestamp.fromDate(new Date("2005-09-01")),
     dateOut: Timestamp.fromDate(new Date("2008-07-31")),

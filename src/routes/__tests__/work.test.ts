@@ -1,5 +1,6 @@
 import request from "supertest";
 
+import { test } from "vitest";
 import { app } from "../../app";
 
 const subject = () => request(app.callback()).get("/works");

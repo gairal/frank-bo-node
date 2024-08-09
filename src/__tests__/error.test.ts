@@ -1,5 +1,6 @@
 import request from "supertest";
 
+import { test, vi } from "vitest";
 import { app } from "../app";
 import * as educationModel from "../model/education";
 
@@ -13,9 +14,9 @@ describe("error", () => {
   });
 
   test("returns a 500 status on error", async () => {
-    jest
-      .spyOn(educationModel, "getAll")
-      .mockRejectedValueOnce(Error("NETWORK_ERROR"));
+    vi.spyOn(educationModel, "getAll").mockRejectedValueOnce(
+      Error("NETWORK_ERROR"),
+    );
 
     const { body, status } = await subject("/educations");
 

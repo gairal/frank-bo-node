@@ -1,7 +1,7 @@
 # [frank.gairal.rocks](https://frank.gairal.rocks) RESTful API ![CI status](https://github.com/gairal/frank-bo-node/actions/workflows/ci.yml/badge.svg)
 
 > A REST API built with [TypeScript](https://www.typescriptlang.org/), [Koa](https://koajs.com/),
-> [Jest](https://jestjs.io/), [bun](https://bun.sh/), [biome](https://biomejs.dev/) and ❤️
+> [Vitest](https://vitest.dev), [bun](https://bun.sh/), [biome](https://biomejs.dev/) and ❤️
 
 ## TOC
 
@@ -33,8 +33,8 @@ bun start
 - `bun dev`: launches a ts-node-dev watcher
 - `bun lint`: lints the whole sources and tests with eslint
 - `bun start`: runs the project in production mode
-- `bun test-cov`: runs Jest tests with coverage
-- `bun run test`: runs Jest tests
+- `bun test-cov`: runs vitest tests with coverage
+- `bun run test`: runs vitest tests
 
 ## To-do
 

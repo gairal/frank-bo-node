@@ -1,8 +1,9 @@
 import { Timestamp } from "@google-cloud/firestore";
+import type { DatabaseDocument } from "firestore-vitest/mocks/firestore";
 
 import type { FirestoreWork } from "../../src/types/work";
 
-export const workFixture = (): FirestoreWork[] => [
+export const workFixture = (): (FirestoreWork & DatabaseDocument)[] => [
   {
     achievements: [
       {

@@ -1,17 +1,18 @@
+import { vi } from "vitest";
 import { app } from "../app";
 import { PORT } from "../env";
+import "../index";
 
-const mockListen = jest.fn();
+const mockListen = vi.fn();
 
-app.listen = mockListen;
+vi.mock("../app", () => ({ app: { listen: vi.fn() } }));
 
 afterEach(() => {
   mockListen.mockClear();
 });
 
 test("server works", () => {
-  // eslint-disable-next-line global-require
-  require("..");
+  // require("../index.ts");
   expect(app.listen).toHaveBeenCalledTimes(1);
   expect(app.listen).toHaveBeenCalledWith(PORT, expect.any(Function));
 });
