@@ -1,6 +1,7 @@
 import request from "supertest";
 
 import { app } from "../app";
+// biome-ignore lint/style/noNamespaceImport: exception
 import * as educationModel from "../model/education";
 
 const subject = async (path: string) => request(app.callback()).get(path);
@@ -15,7 +16,7 @@ describe("error", () => {
   test("returns a 500 status on error", async () => {
     jest
       .spyOn(educationModel, "getAll")
-      .mockRejectedValueOnce(Error("NETWORK_ERROR"));
+      .mockRejectedValueOnce(new Error("NETWORK_ERROR"));
 
     const { body, status } = await subject("/educations");
 
