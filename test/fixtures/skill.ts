@@ -1,6 +1,7 @@
+import type { DocumentData } from "@google-cloud/firestore";
 import type { FirestoreSkillByCategory } from "../../src/types/skill";
 
-export const skillFixture = (): FirestoreSkillByCategory[] => [
+export const skillFixture = (): (FirestoreSkillByCategory & DocumentData)[] => [
   {
     id: "server-administration",
     label: "Server administration",

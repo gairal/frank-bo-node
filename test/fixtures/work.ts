@@ -1,8 +1,8 @@
-import { Timestamp } from "@google-cloud/firestore";
+import { type DocumentData, Timestamp } from "@google-cloud/firestore";
 
 import type { FirestoreWork } from "../../src/types/work";
 
-export const workFixture = (): FirestoreWork[] => [
+export const workFixture = (): (FirestoreWork & DocumentData)[] => [
   {
     achievements: [
       {

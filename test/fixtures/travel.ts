@@ -1,8 +1,8 @@
-import { GeoPoint } from "@google-cloud/firestore";
+import { type DocumentData, GeoPoint } from "@google-cloud/firestore";
 
 import type { FirestoreTravel } from "../../src/types/travel";
 
-export const travelFixture = (): FirestoreTravel[] => [
+export const travelFixture = (): (FirestoreTravel & DocumentData)[] => [
   {
     coordinates: new GeoPoint(52.3702, 4.89517),
     id: "amsterdam",

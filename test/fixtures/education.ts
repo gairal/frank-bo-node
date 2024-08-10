@@ -1,8 +1,8 @@
-import { Timestamp } from "@google-cloud/firestore";
+import { type DocumentData, Timestamp } from "@google-cloud/firestore";
 
 import type { FirestoreEducation } from "../../src/types/education";
 
-export const educationFixture = (): FirestoreEducation[] => [
+export const educationFixture = (): (FirestoreEducation & DocumentData)[] => [
   {
     dateIn: Timestamp.fromDate(new Date("2005-09-01")),
     dateOut: Timestamp.fromDate(new Date("2008-07-31")),
