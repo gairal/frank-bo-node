@@ -1,8 +1,7 @@
-import type { DatabaseDocument } from "firestore-vitest/mocks/firestore";
+import type { DocumentData } from "@google-cloud/firestore";
 import type { FirestoreSkillByCategory } from "../../src/types/skill";
 
-export const skillFixture = (): (FirestoreSkillByCategory &
-  DatabaseDocument)[] => [
+export const skillFixture = (): (FirestoreSkillByCategory & DocumentData)[] => [
   {
     id: "server-administration",
     label: "Server administration",

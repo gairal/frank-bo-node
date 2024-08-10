@@ -1,7 +1,7 @@
-import type { DatabaseDocument } from "firestore-vitest/mocks/firestore";
+import type { DocumentData } from "@google-cloud/firestore";
 import type { FirestoreInterest } from "../../src/types/interest";
 
-export const interestFixture = (): (FirestoreInterest & DatabaseDocument)[] => [
+export const interestFixture = (): (FirestoreInterest & DocumentData)[] => [
   {
     description:
       "China, Vietnam, Thaïland, Laos, Cambodia, Malaysia, Indonesia, India, Iceland, Ecuador, USA, Brazil, Spain, and more...",

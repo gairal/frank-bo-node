@@ -1,4 +1,4 @@
-import { mockGoogleCloudFirestore } from "firestore-vitest";
+import { mockGoogleCloudFirestore } from "firestore-vitest-mock";
 
 import { educationFixture } from "./fixtures/education";
 import { interestFixture } from "./fixtures/interest";
