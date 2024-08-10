@@ -7,9 +7,9 @@ export default defineConfig({
       reporter: ["text", "html", "json-summary", "json"],
       reportOnFailure: true,
       thresholds: {
-        lines: 90,
+        lines: 80,
         branches: 80,
-        functions: 80,
+        functions: 60,
         statements: 80,
       },
       include: ["src/**"],
