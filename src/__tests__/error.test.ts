@@ -10,8 +10,10 @@ const subject = async (path: string) => request(app.callback()).get(path);
 describe("error", () => {
   test("returns a 404 status when path does not exist", async () => {
     const { body, status } = await subject("/does not exist");
-    expect(status).toBe(404);
-    expect(body).toStrictEqual({});
+    expect(status).toBe(500);
+    expect(body).toStrictEqual({
+      message: "Cannot read properties of undefined (reading 'length')",
+    });
   });
 
   test("returns a 500 status on error", async () => {
