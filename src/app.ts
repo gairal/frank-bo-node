@@ -19,31 +19,29 @@ if (LOG_LEVEL === "debug") {
   app.use(logger());
 }
 
-app.use(errorHandler);
-app.use(helmet());
-app.use(
-  cors({
-    allowMethods: ["GET"],
-    origin: (ctx) =>
-      ctx.header.origin?.includes("gairal.")
-        ? ctx.header.origin
-        : "http://localhost:3000",
-  }),
-);
+app
+  .use(errorHandler)
+  .use(helmet())
+  .use(
+    cors({
+      allowMethods: ["GET"],
+      origin: (ctx) =>
+        ctx.header.origin?.includes("gairal.")
+          ? ctx.header.origin
+          : "http://localhost:3000",
+    }),
+  );
 
 /** ROUTES */
 
-app.use(educationRouter.routes());
-app.use(educationRouter.allowedMethods());
-
-app.use(interestRouter.routes());
-app.use(interestRouter.allowedMethods());
-
-app.use(skillRouter.routes());
-app.use(skillRouter.allowedMethods());
-
-app.use(travelRouter.routes());
-app.use(travelRouter.allowedMethods());
-
-app.use(workRouter.routes());
-app.use(workRouter.allowedMethods());
+app
+  .use(educationRouter.routes())
+  .use(educationRouter.allowedMethods())
+  .use(interestRouter.routes())
+  .use(interestRouter.allowedMethods())
+  .use(skillRouter.routes())
+  .use(skillRouter.allowedMethods())
+  .use(travelRouter.routes())
+  .use(travelRouter.allowedMethods())
+  .use(workRouter.routes())
+  .use(workRouter.allowedMethods());
