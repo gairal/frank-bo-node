@@ -31,7 +31,7 @@
     "lint-staged": "^15.2.10",
     "supertest": "^7.0.0",
     "typescript": "^5.5.4",
-    "vitest": "^2.0.5"
+    "vitest": "^3.0.2"
   },
   "dependencies": {
     "@google-cloud/firestore": "^7.9.0",
