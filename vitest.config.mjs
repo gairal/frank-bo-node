@@ -13,7 +13,7 @@ export default defineConfig({
         statements: 80,
       },
       include: ["src/**"],
-      exclude: ["src/**/*.d.ts"],
+      exclude: ["src/**/*.d.ts", "src/types/*.ts"],
     },
     globals: true,
     include: ["src/**/*.test.ts"],
