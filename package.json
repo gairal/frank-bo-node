@@ -17,7 +17,7 @@
     "test-cov": "bun run test --coverage"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.8.3",
+    "@biomejs/biome": "^2.1.1",
     "@tsconfig/node20": "^20.1.4",
     "@types/koa": "^2.15.0",
     "@types/koa-logger": "^3.1.5",
